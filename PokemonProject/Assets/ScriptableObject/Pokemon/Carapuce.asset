@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbc4818d9b64dfca233bc3a12196333, type: 3}
+  m_Name: Carapuce
+  m_EditorClassIdentifier: 
+  name: Carapuce
+  description: Tortue mais d'eau
+  baseMaxHp: 5
+  baseAttack: 3
+  baseDefense: 2
+  baseAttackSpe: 3
+  baseDefenseSpe: 2
+  baseSpeed: 5
+  HpGain: 3
+  attackGain: 2
+  defenseGain: 1
+  attackSpeGain: 2
+  defenseSpeGain: 2
+  speedGain: 2
+  learnCapacities:
+  - capacity: {fileID: 11400000, guid: 9d33a656c6adf1d4a9a0e347d7792194, type: 2}
+    level: 1
+  - capacity: {fileID: 11400000, guid: a93fc6d06e40ae24db8a46e64f151047, type: 2}
+    level: 5
+  experienceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 15
+      inSlope: 0
+      outSlope: 100.85859
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 100
+      value: 10000
+      inSlope: 100.85859
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
