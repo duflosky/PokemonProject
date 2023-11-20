@@ -4,15 +4,16 @@ using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] [SerializeField] private int speed = 5;
+    [Header("Controls")] 
+    [SerializeField] private int speed = 1;
 
     [Header("Tilemaps")]
     [SerializeField] private Tilemap groundTilemap;
     [SerializeField] private Tilemap collisionTilemap;
 
     private bool isWalking;
-    private Vector2 movement;
     private PlayerInputs playerInputs;
+    private Vector2 movement;
 
     private void OnEnable()
     {
