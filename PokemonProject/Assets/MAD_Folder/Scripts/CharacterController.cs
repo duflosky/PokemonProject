@@ -4,12 +4,10 @@ using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] 
-    [SerializeField] private int speed = 1;
+    [Header("Controls")] [SerializeField] private int speed = 1;
 
-    [Header("Tilemaps")]
-    [SerializeField] private Tilemap groundTilemap;
-    [SerializeField] private Tilemap collisionTilemap;
+    [Header("Tilemaps")] [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private Tilemap[] collisionTilemaps;
 
     private bool isWalking;
     private PlayerInputs playerInputs;
@@ -31,7 +29,17 @@ public class CharacterController : MonoBehaviour
         if (isWalking) return;
         movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
 
-        if (movement.x != 0) movement.y = 0;
+        if (movement.x != 0)
+        {
+            movement.x = Mathf.RoundToInt(movement.x);
+            movement.y = 0;
+        }
+
+        if (movement.y != 0)
+        {
+            movement.y = Mathf.RoundToInt(movement.y);
+            movement.x = 0;
+        }
 
         if (movement == Vector2.zero) return;
         var targetPos = transform.position;
@@ -43,14 +51,16 @@ public class CharacterController : MonoBehaviour
 
     private IEnumerator Move(Vector3 targetPos)
     {
-        isWalking = true;
-
         Vector3Int gridPosition = groundTilemap.WorldToCell(targetPos);
-        if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+        foreach (var collisionTilemap in collisionTilemaps)
         {
-            isWalking = false;
-            yield break;
+            if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+            {
+                yield break;
+            }
         }
+
+        isWalking = true;
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {

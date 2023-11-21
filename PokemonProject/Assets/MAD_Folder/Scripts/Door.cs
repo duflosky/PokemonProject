@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Door : MonoBehaviour
         {
             Debug.Log("Player entered");
             // TODO : Animations, Music & Scene
-            // SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
