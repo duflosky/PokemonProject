@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UI.Bag;
 using UI.Fight;
 using UI.PokemonTeam;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace UI
         [SerializeField] private UIScrollMenu uiScrollMenu;
         [SerializeField] private UIPokemonTeam uiPokemonTeam;
         [SerializeField] private UIFight uiFight;
+        [SerializeField] private UIBag uiBag;
 
         private UIMenu currentUiSelected;
 
@@ -30,6 +32,7 @@ namespace UI
             uiScrollMenu.gameObject.SetActive(false);
             uiFight.gameObject.SetActive(false);
             uiPokemonTeam.gameObject.SetActive(false);
+            uiBag.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -60,19 +63,18 @@ namespace UI
             if(currentUiSelected)currentUiSelected.gameObject.SetActive(false);
             switch (ui)
             {
-                case Enums.UIMenus.ScrollMenu:
-                    currentUiSelected = uiScrollMenu;
-                    uiScrollMenu.gameObject.SetActive(true);
-                    uiScrollMenu.InitMenu();
+                case Enums.UIMenus.ScrollMenu: currentUiSelected = uiScrollMenu;
                     break;
-                case Enums.UIMenus.PokemonTeamMenu:
-                    currentUiSelected = uiPokemonTeam;
-                    uiPokemonTeam.gameObject.SetActive(true);
-                    currentUiSelected.InitMenu();
+                case Enums.UIMenus.PokemonTeamMenu: currentUiSelected = uiPokemonTeam;
+                    break;
+                case Enums.UIMenus.BagMenu : currentUiSelected = uiBag;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);
             }
+            
+            currentUiSelected.gameObject.SetActive(true);
+            currentUiSelected.InitMenu();
         }
         
         private void CloseMenu(Enums.UIMenus ui)
@@ -85,6 +87,9 @@ namespace UI
                     break;
                 case Enums.UIMenus.PokemonTeamMenu:
                     uiPokemonTeam.gameObject.SetActive(false);
+                    break;
+                case Enums.UIMenus.BagMenu:
+                    uiBag.gameObject.SetActive(false);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);

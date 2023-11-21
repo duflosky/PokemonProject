@@ -54,7 +54,7 @@ namespace UI.Fight
             {
                 capacitiesButtons[i].InitButton(this,i);
             }
-            InitMenu();
+            //InitMenu();
         }
 
         void SetPokemonCapacities(PokemonInstance pokemon)

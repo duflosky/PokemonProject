@@ -5,7 +5,8 @@ public class Enums
                 None,
                 FightMenu,
                 ScrollMenu,
-                PokemonTeamMenu
+                PokemonTeamMenu,
+                BagMenu
                 
         }
         
@@ -14,6 +15,13 @@ public class Enums
                None,
                FightPanel,
                StatisticPanel
+        }
+
+        public enum ObjectType
+        {
+                Items,
+                KeyItems,
+                Pokeballs
         }
         
         public enum Types

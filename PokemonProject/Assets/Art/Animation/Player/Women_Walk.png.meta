@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c729e2b837b1d1645b47cf770b6fb165
+guid: 2f8605afb005b8c47b3d886931708579
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,282 +110,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_0
+      name: Women_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8402c1582a5cbd44b2b9ad92a703bea
+      internalID: -2045080974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b314643780026e1448999190040a27b4
+      internalID: 571169795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49dad4a3d32e134cb80969afed8c51f
+      internalID: -1194129665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081d06cc7b8053244b450e615464911f
+      internalID: -932405962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3aafec8e2563e48b4823cd9bbe07e1
+      internalID: 522055618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46116f10efdb443429c34603c1d02677
+      internalID: -1909353044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Women_Walk_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 162
-        height: 72
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6339a417b118b1444be8ecc6c05e7d50
-      internalID: -1730009379
+      spriteID: c0b29563a14636c4d96c483164f12eae
+      internalID: -2061147663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_1
+      name: Women_Walk_7
       rect:
         serializedVersion: 2
-        x: 298
-        y: 192
-        width: 239
-        height: 48
+        x: 16
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b522672105f49a4e8fcd5c7fa5a72e0
-      internalID: 769415352
+      spriteID: 9741c916d57dcc84982046eb6c20e98d
+      internalID: -1985978725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_2
+      name: Women_Walk_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 264
-        width: 100
-        height: 29
+        x: 32
+        y: 0
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9b62bf089e5d241b8858a3b2b735b7
-      internalID: 1039198358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_3
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 244
-        width: 240
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27687a88f4a34f34a97da535f4be61d5
-      internalID: 152408016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_4
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 215
-        width: 104
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 872f9b33cd1fe8a4186a0c606bd34cb9
-      internalID: -1267679545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_5
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 244
-        width: 120
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d072f6d67f3078408702e7ed61406b7
-      internalID: -754928046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_6
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 218
-        width: 103
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47372848e69b252438d7ebdd8cb083b2
-      internalID: 1635554245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_7
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 188
-        width: 104
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d26341591718cfc429431df0a045acf2
-      internalID: -1710934968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combat Asset_0
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 98
-        width: 48
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2ad2ba34aa755c43980b1a78fd9406d
-      internalID: 2020784215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combat Asset_1
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 92
-        width: 48
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6e9cd54c3db3a645a871fdbe2ccd7f7
-      internalID: -1120934640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combat Asset_2
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 87
-        width: 48
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4aa531728223af14a8a71f2a4faa8fc2
-      internalID: -451143174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combat Asset_3
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 282
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1239c45b9a0d2b499e495458c89deef
-      internalID: 813511720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Combat Asset_4
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 250
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8303139da91123468497d0f1df32434
-      internalID: -457469612
+      spriteID: 5f559d0e6e7f95447928fe1691dd6683
+      internalID: -204431339
       vertices: []
       indices: 
       edges: []
@@ -393,7 +301,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e049189b5623e5243b917ba5c8bb66ac
+    spriteID: 18177a343d7754a48a04ee8414dc0a3f
     internalID: 0
     vertices: []
     indices: 
@@ -401,19 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Combat Asset_0: 2020784215
-      Combat Asset_1: -1120934640
-      Combat Asset_2: -451143174
-      Combat Asset_3: 813511720
-      Combat Asset_4: -457469612
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_0: -1730009379
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_1: 769415352
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_2: 1039198358
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_3: 152408016
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_4: -1267679545
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_5: -754928046
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_6: 1635554245
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_7: -1710934968
+      Women_Walk_0: -2045080974
+      Women_Walk_1: 571169795
+      Women_Walk_2: -1194129665
+      Women_Walk_3: -932405962
+      Women_Walk_4: 522055618
+      Women_Walk_5: -1909353044
+      Women_Walk_6: -2061147663
+      Women_Walk_7: -1985978725
+      Women_Walk_8: -204431339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fb16f27b869a1f4cb3e61b426e604ac
+guid: 4f713218bb15db54aba44dbbc35adb42
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,70 +108,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Menu Frames_0
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 146
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 6, y: 6, z: 6, w: 6}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35ac475a1973efe468797d5ace106877
-      internalID: -140246725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menu Frames_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 145
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 9, y: 9, z: 9, w: 9}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 763d92f43e2303d41aa74c1289f188ef
-      internalID: 238307695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7190628d17940e647adedc2bb7481b79
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Menu Frames_0: -140246725
-      Menu Frames_1: 238307695
-      Menu Frames_2: -1867114082
-      Menu Frames_3: -329997029
-      Menu Frames_4: 1725104332
-      Menu Frames_5: -1675463753
-      Menu Frames_6: -1432094352
-      Menu Frames_7: -1739272923
-      Menu Frames_8: -575136362
-      Menu Frames_9: -360517652
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

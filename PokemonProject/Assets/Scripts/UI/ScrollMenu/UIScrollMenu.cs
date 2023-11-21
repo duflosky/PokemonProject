@@ -38,11 +38,13 @@ namespace UI
                 case 1:
                     UIManager.Instance.OpenMenu(Enums.UIMenus.PokemonTeamMenu,true);
                     break;
-                case 2: break;
+                case 2:
+                    UIManager.Instance.OpenMenu(Enums.UIMenus.BagMenu, true);
+                    break;
                 case 3: break;
                 case 4: break;
                 case 5: break;
-                case 6: break;
+                case 6: GoBackMenu(); break;
                 default: throw new NotImplementedException();
             }
         }
