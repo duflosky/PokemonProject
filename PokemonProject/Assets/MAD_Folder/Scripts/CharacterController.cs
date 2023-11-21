@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
 
     [Header("Tilemaps")] [SerializeField] private Tilemap groundTilemap;
     [SerializeField] private Tilemap[] collisionTilemaps;
+    [SerializeField] private Animator _animator;
 
     private bool isWalking;
     private PlayerInputs playerInputs;
@@ -26,25 +27,45 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        _animator.SetBool("Walking", isWalking);
         if (isWalking) return;
         movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
-
-        if (movement.x != 0)
-        {
-            movement.x = Mathf.RoundToInt(movement.x);
-            movement.y = 0;
-        }
-
-        if (movement.y != 0)
-        {
-            movement.y = Mathf.RoundToInt(movement.y);
-            movement.x = 0;
-        }
-
         if (movement == Vector2.zero) return;
+
+        Vector3 offset;
+        int animIndex;
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+        {
+            if (movement.x > 0)
+            {
+                offset = Vector3.right;
+                animIndex = 1;
+            }
+            else
+            {
+                offset = Vector3.left;
+                animIndex = 3;
+            }
+        }
+        else
+        {
+            if (movement.y > 0)
+            {
+                offset = Vector3.up;
+                animIndex = 0;
+            }
+            else
+            {
+                offset = Vector3.down;
+                animIndex = 2;
+            }
+        }
+        
+        _animator.SetInteger("WalkSide", animIndex);
+        _animator.SetFloat("WalkBlend", animIndex/3f);
+
         var targetPos = transform.position;
-        targetPos.x += movement.x;
-        targetPos.y += movement.y;
+        targetPos += offset;
 
         StartCoroutine(Move(targetPos));
     }
