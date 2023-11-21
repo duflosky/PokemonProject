@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace UI.Fight
 {
-    public class UIFight : MonoBehaviour
+    public class UIFight : UIMenu
     {
         [SerializeField] private TextMeshProUGUI currentPPText;
         [SerializeField] private TextMeshProUGUI maxPPText;
@@ -31,33 +31,30 @@ namespace UI.Fight
          private PokemonInstance allyInstance;
         private PokemonInstance enemyInstance;
 
-        private Enums.UISelection currentSelectedUI = Enums.UISelection.ActionMenu;
+        private Enums.UIPanel currentSelectedUI;
 
-        private void Start()
+        public override void InitMenu()
         {
             fightPanel.SetActive(false);
+            
+            EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
+            
+            allyInfoBox.InitBox(allyInstance);
+            SetPokemonCapacities(allyInstance);
+            enemyInfoBox.InitBox(enemyInstance);
+        }
+        
+        void Start()
+        {
+            allyInstance = new PokemonInstance(allyPokemon, 10);
+            allyInstance.currentExp = 150;
+            enemyInstance = new PokemonInstance(enemyPokemon, 13);
+            
             for (int i = 0; i < capacitiesButtons.Length; i++)
             {
                 capacitiesButtons[i].InitButton(this,i);
             }
-            
-            
-            allyInstance = new PokemonInstance(allyPokemon, 10);
-            allyInstance.currentExp = 150;
-            enemyInstance = new PokemonInstance(enemyPokemon, 13);
-            InitFight();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))GoBackPanel();
-        }
-        
-        void InitFight()
-        {
-            allyInfoBox.InitBox(allyInstance);
-            SetPokemonCapacities(allyInstance);
-            enemyInfoBox.InitBox(enemyInstance);
+            InitMenu();
         }
 
         void SetPokemonCapacities(PokemonInstance pokemon)
@@ -81,25 +78,25 @@ namespace UI.Fight
         {
             actionPanel.SetActive(false);
             fightPanel.SetActive(true);
-            currentSelectedUI = Enums.UISelection.FightPanel;
-            EventManager.Instance.eventSystem.SetSelectedGameObject(fightPanelFirstSelect.gameObject);
+            currentSelectedUI = Enums.UIPanel.FightPanel;
+            EventManager.Instance.SelectObject(fightPanelFirstSelect.gameObject);
         }
 
         public void CloseFightPanel()
         {
             fightPanel.SetActive(false);
             actionPanel.SetActive(true);
-            currentSelectedUI = Enums.UISelection.ActionMenu;
-            EventManager.Instance.eventSystem.SetSelectedGameObject(actionPanelFirstSelect.gameObject);
+            currentSelectedUI = Enums.UIPanel.None;
+            EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
         }
 
-        public void GoBackPanel()
+        public override void GoBackMenu()
         {
             switch (currentSelectedUI)
             {
-                case Enums.UISelection.ActionMenu:
+                case Enums.UIPanel.None:
                     break;
-                case Enums.UISelection.FightPanel:
+                case Enums.UIPanel.FightPanel:
                     CloseFightPanel();
                     break;
                 default:

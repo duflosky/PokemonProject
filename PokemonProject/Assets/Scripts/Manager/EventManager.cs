@@ -8,12 +8,22 @@ namespace Manager
     {
         public static EventManager Instance;
 
-        public EventSystem eventSystem;
+        private EventSystem eventSystem;
 
         private void Awake()
         {
             if (Instance != null) DestroyImmediate(this);
             else Instance = this;
+        }
+
+        private void Start()
+        {
+            eventSystem = GetComponent<EventSystem>();
+        }
+
+        public void SelectObject(GameObject obj)
+        {
+            eventSystem.SetSelectedGameObject(obj);
         }
     }
 }

@@ -1,9 +1,19 @@
 public class Enums
 {
-        public enum UISelection
+        public enum UIMenus
         {
-                ActionMenu,
-                FightPanel
+                None,
+                FightMenu,
+                ScrollMenu,
+                PokemonTeamMenu
+                
+        }
+        
+        public enum UIPanel
+        {
+               None,
+               FightPanel,
+               StatisticPanel
         }
         
         public enum Types
