@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbc4818d9b64dfca233bc3a12196333, type: 3}
   m_Name: Rattata
   m_EditorClassIdentifier: 
-  name: ratata
+  name: RATTATA
   description: Le rat, proche de l'homme
   baseMaxHp: 5
   baseAttack: 3
@@ -53,3 +53,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  facePokemonSprite: {fileID: 436651644, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  backPokemonSprite: {fileID: 258525353, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  animationFrames:
+  - {fileID: -406261261, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  - {fileID: -401860697, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] [SerializeField] private int speed = 1;
+    [Header("Controls")] [SerializeField] private float speed = 1;
 
     [Header("Tilemaps")] [SerializeField] private Tilemap groundTilemap;
     [SerializeField] private Tilemap[] collisionTilemaps;
@@ -27,9 +27,9 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool("Walking", isWalking);
         if (isWalking) return;
         movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
+        _animator.SetBool("Walking", movement != Vector2.zero);
         if (movement == Vector2.zero) return;
 
         Vector3 offset;
@@ -85,7 +85,7 @@ public class CharacterController : MonoBehaviour
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             yield return null;
         }
 

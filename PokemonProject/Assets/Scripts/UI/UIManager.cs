@@ -45,7 +45,6 @@ namespace UI
             if(menuStack.Count == 0)
             {
                 OpenMenu(Enums.UIMenus.ScrollMenu,true);
-                Time.timeScale = 0;
             }
             else currentUiSelected.GoBackMenu();
         }
@@ -83,7 +82,6 @@ namespace UI
             {
                 case Enums.UIMenus.ScrollMenu:
                     uiScrollMenu.gameObject.SetActive(false);
-                    Time.timeScale = 1;
                     break;
                 case Enums.UIMenus.PokemonTeamMenu:
                     uiPokemonTeam.gameObject.SetActive(false);

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using SO;
 using TMPro;
 using UI.Fight;
@@ -17,9 +18,16 @@ namespace UI.PokemonTeam
         [SerializeField] private TextMeshProUGUI maxLifeText;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] Lifebar lifebar;
+        [SerializeField] private Image animationImage;
         [Header("Sprite")]
         [SerializeField]private Sprite selectSprite;
+
+        [Space] [SerializeField] private float animationDelay= 1;
+        
         private Sprite baseSprite;
+
+        private Sprite[] pokemonAnimationFrames;
+
 
         private void Start()
         {
@@ -34,6 +42,8 @@ namespace UI.PokemonTeam
             maxLifeText.text = $"{pokemon.maxHp}";
             levelText.text = $"{pokemon.level}";
             lifebar.InitBar(pokemon.currentHp, pokemon.maxHp);
+            pokemonAnimationFrames = pokemon.so.animationFrames;
+            StartCoroutine(AnimateSprite());
         }
 
         public void OnSelect(BaseEventData eventData)
@@ -44,6 +54,22 @@ namespace UI.PokemonTeam
         public void OnDeselect(BaseEventData eventData)
         {
             image.sprite = baseSprite;
+        }
+
+        IEnumerator AnimateSprite()
+        {
+            int frameCount = 0;
+            while (true)
+            {
+                if (pokemonAnimationFrames == null) break;
+                
+                frameCount++;
+                if (frameCount == pokemonAnimationFrames.Length) frameCount = 0;
+
+                animationImage.sprite = pokemonAnimationFrames[frameCount];
+                
+                yield return new WaitForSeconds(animationDelay);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbc4818d9b64dfca233bc3a12196333, type: 3}
   m_Name: Carapuce
   m_EditorClassIdentifier: 
-  name: Carapuce
+  name: CARAPUCE
   description: Tortue mais d'eau
   baseMaxHp: 5
   baseAttack: 3
@@ -55,3 +55,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  facePokemonSprite: {fileID: 807668433, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  backPokemonSprite: {fileID: -958390324, guid: fb108ed57ec980a4284a0bfcfed4e993,
+    type: 3}
+  animationFrames:
+  - {fileID: 276366151, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  - {fileID: -1910146413, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}

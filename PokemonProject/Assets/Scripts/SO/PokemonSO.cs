@@ -32,6 +32,11 @@ namespace SO
         [Header("ProgressCurves")] 
         public AnimationCurve experienceCurve = AnimationCurve.Linear(1,15,100,10000);
 
+        [Header("Sprites")] 
+        public Sprite facePokemonSprite;
+        public Sprite backPokemonSprite;
+        public Sprite[] animationFrames;
+
         public PokemonInstance GetInstance() => new PokemonInstance(this);
     }
 
