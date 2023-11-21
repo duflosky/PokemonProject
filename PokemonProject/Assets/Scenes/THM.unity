@@ -10156,16 +10156,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8404664449573360157, guid: 062530380ede90342875afc73f3e3a4a,
-        type: 3}
-      propertyPath: debugStartPokemon.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8404664449573360157, guid: 062530380ede90342875afc73f3e3a4a,
-        type: 3}
-      propertyPath: debugStartPokemon.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8756895242159990486, guid: 062530380ede90342875afc73f3e3a4a,
         type: 3}
       propertyPath: m_Name
