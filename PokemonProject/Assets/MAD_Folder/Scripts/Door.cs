@@ -1,14 +1,22 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Door : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private Tilemap tilemapFloor;
+    [SerializeField] private Tilemap tilemapCollisions;
+    [SerializeField] private GameObject tilemapToActivate;
+    [SerializeField] private GameObject tilemapToDeactivate;
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered");
-            // TODO : Animations, Music & Scene
+            var player = other.gameObject.GetComponent<CharacterController>();
+            player.GroundTilemap = tilemapFloor;
+            player.CollisionTilemaps = new[] {tilemapCollisions};
+            tilemapToActivate.SetActive(true);
+            tilemapToDeactivate.SetActive(false);
         }
     }
 }

@@ -4,10 +4,12 @@ using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] [SerializeField] private float speed = 1;
+    [Header("Controls")] 
+    [SerializeField] private float speed = 1;
 
-    [Header("Tilemaps")] [SerializeField] private Tilemap groundTilemap;
-    [SerializeField] private Tilemap[] collisionTilemaps;
+    [Header("Tilemaps")] 
+    public Tilemap GroundTilemap;
+    public Tilemap[] CollisionTilemaps;
     [SerializeField] private Animator _animator;
 
     private bool isWalking;
@@ -72,10 +74,10 @@ public class CharacterController : MonoBehaviour
 
     private IEnumerator Move(Vector3 targetPos)
     {
-        Vector3Int gridPosition = groundTilemap.WorldToCell(targetPos);
-        foreach (var collisionTilemap in collisionTilemaps)
+        Vector3Int gridPosition = GroundTilemap.WorldToCell(targetPos);
+        foreach (var collisionTilemap in CollisionTilemaps)
         {
-            if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+            if (!GroundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
             {
                 yield break;
             }
