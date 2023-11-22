@@ -43,7 +43,7 @@ namespace Manager
             
             for (int i = 0; i < debugStartPokemon.Length; i++)
             {
-                team[i] = new PokemonInstance(debugStartPokemon[i], Random.Range(1, 11));
+                team[i] = new PokemonInstance(debugStartPokemon[i], 5);
             }
         }
 

@@ -22,7 +22,7 @@ namespace UI.Fight
         public void InitBox(PokemonInstance _pokemon)
         {
             pokemon = _pokemon;
-            nameText.text = pokemon.name;
+            nameText.text = pokemon.Name;
             levelText.text = $"{pokemon.level}";
             if (hpText) hpText.text = $"{pokemon.currentHp} / {pokemon.maxHp}";
             lifebar.InitBar(pokemon.currentHp, pokemon.maxHp);
@@ -45,6 +45,11 @@ namespace UI.Fight
 
                 await Task.Yield();
             }
+        }
+
+        public async Task UpdateExperience(int exp)
+        {
+            await expBar.UpdateExperience(exp);
         }
     }
 }

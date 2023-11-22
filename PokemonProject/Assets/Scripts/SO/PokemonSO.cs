@@ -55,7 +55,7 @@ namespace SO
     {
         public PokemonSO so;
         
-        public string name;
+        public string Name;
         public string description;
 
         public int maxHp;
@@ -77,7 +77,7 @@ namespace SO
         public PokemonInstance(PokemonSO _so)
         {
             so = _so;
-            name = _so.name;
+            Name = _so.name;
             description = _so.description;
 
             maxHp = _so.baseMaxHp;
@@ -147,6 +147,14 @@ namespace SO
                 if (capacities[index] != null) return;
                 capacities[index] = capacity;
             }
+        }
+
+        public void LevelUp()
+        {
+            level++;
+            currentExp = 0;
+            totalExpNeed = (int)so.experienceCurve.Evaluate(level);
+            LevelUpStats();
         }
         
         private void LevelUpStats()

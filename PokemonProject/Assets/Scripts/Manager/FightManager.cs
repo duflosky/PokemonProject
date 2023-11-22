@@ -90,19 +90,19 @@ namespace Manager
             var secondPokemon = !allyFirst ? currentAllyPokemon : currentEnemyPokemon;
             
             await ProcessAttack(allyCapacityUse.so, firstPokemon, secondPokemon, allyFirst);
-            await ProcessAttack(allyCapacityUse.so, secondPokemon, firstPokemon, !allyFirst);
-            
-            /*if (currentAllyPokemon.speed > currentEnemyPokemon.speed)
-            {
-                await ProcessAttack(allyCapacityUse.so, currentAllyPokemon, currentEnemyPokemon, true);
-                await ProcessAttack(allyCapacityUse.so, currentEnemyPokemon, currentAllyPokemon, false);
-            }
-            else
-            {
-                await ProcessAttack(allyCapacityUse.so, currentAllyPokemon, currentEnemyPokemon, true);
-                await ProcessAttack(allyCapacityUse.so, currentEnemyPokemon, currentAllyPokemon, false);
-            }*/
+           
+            if(secondPokemon.currentHp>0)await ProcessAttack(allyCapacityUse.so, secondPokemon, firstPokemon, !allyFirst);
 
+            if (currentAllyPokemon.currentHp <= 0)
+            {
+                //Choose New Pokemon
+            }
+
+            if (currentEnemyPokemon.currentHp <= 0)
+            {
+                await ProcessEnemyKO();
+            }
+            
             ui.EndTurn();
         }
 
@@ -121,7 +121,28 @@ namespace Manager
             await ui.UpdateLife(allyAttack);
 
         }
-        
+
+        async Task ProcessEnemyKO()
+        {
+            var expGain = CalculateGainExp(currentEnemyPokemon);
+            var koMesssage = $"{currentEnemyPokemon.Name} est KO!";
+            var expMesssage = $"{currentAllyPokemon.Name} a gagné {expGain} points EXP.!";
+            
+            await ui.LogMessage(koMesssage, true);
+            await ui.LogMessage(expMesssage, true);
+            currentAllyPokemon.currentExp += expGain;
+            await ui.UpdateExperience(currentAllyPokemon.currentExp);
+            if (currentAllyPokemon.currentExp >= currentAllyPokemon.totalExpNeed) currentAllyPokemon.LevelUp();
+
+            QuitFight();
+        }
+
+        private void QuitFight()
+        {
+            UIManager.Instance.ReturnMenu();
+            GameManager.Instance.GoToScene(enterFightEaseDuration, false);
+        }
+
         int CalculateDamage(CapacitySO capacity, PokemonInstance attacker, PokemonInstance defender)
         {
             //Merci https://www.pokepedia.fr/Calcul_des_dégâts
@@ -181,6 +202,11 @@ namespace Manager
             }
             
             return (int)damage;
+        }
+        
+        private int CalculateGainExp(PokemonInstance pokemon)
+        {
+            return 15 * pokemon.level;
         }
     }
 }
