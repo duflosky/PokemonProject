@@ -37,7 +37,7 @@ namespace UI.PokemonTeam
 
         public void InitDisplayer(PokemonInstance pokemon)
         {
-            nameText.text = pokemon.name;
+            nameText.text = pokemon.Name;
             currentLifeText.text = $"{pokemon.currentHp}";
             maxLifeText.text = $"{pokemon.maxHp}";
             levelText.text = $"{pokemon.level}";

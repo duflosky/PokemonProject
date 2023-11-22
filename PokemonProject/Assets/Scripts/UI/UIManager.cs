@@ -91,6 +91,9 @@ namespace UI
                 case Enums.UIMenus.BagMenu:
                     uiBag.gameObject.SetActive(false);
                     break;
+                case Enums.UIMenus.FightMenu:
+                    uiFight.gameObject.SetActive(false);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);
             }

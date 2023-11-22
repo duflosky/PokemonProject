@@ -112,10 +112,21 @@ namespace UI.Fight
             var box = allyAttack? enemyInfoBox : allyInfoBox;
             await box.UpdateLife();
         }
+        
+        public async Task UpdateExperience(int exp)
+        {
+            await allyInfoBox.UpdateExperience(exp);
+        }
 
-        public async Task LogMessage(string message)
+        public async Task LogMessage(string message, bool needInteract = false)
         {
            await logger.LogMessage(message);
+           if(!needInteract)return;
+           
+           while (!Input.GetKeyDown(KeyCode.Space))
+           {
+               await Task.Yield();
+           }
         }
 
         public void StartTurn()
