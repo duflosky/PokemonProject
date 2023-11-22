@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using SO;
+using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Manager
@@ -10,6 +13,8 @@ namespace Manager
     {
         public static GameManager Instance;
 
+        [SerializeField] private GameObject gameScene;
+        [SerializeField] private GameObject fightScene;
         public PokemonInstance[] team { get; set; }= new PokemonInstance[6];
         public Dictionary<Enums.ObjectType, List<ItemStack>> inventory = new();
 
@@ -23,6 +28,9 @@ namespace Manager
 
         private void Start()
         {
+            gameScene.SetActive(true);
+            fightScene.SetActive(false);
+            
             foreach (var objectType in Enum.GetValues(typeof(Enums.ObjectType)))
             {
                 inventory.Add((Enums.ObjectType)objectType, new());
@@ -37,6 +45,16 @@ namespace Manager
             {
                 team[i] = new PokemonInstance(debugStartPokemon[i], Random.Range(1, 11));
             }
+        }
+
+
+        public async Task GoToScene(float easeDuration, bool fightScene = true)
+        {
+            await UIScene.Instance.EaseIn(easeDuration);
+            UIManager.Instance.OpenMenu(Enums.UIMenus.FightMenu, true);
+            gameScene.SetActive(!fightScene);
+            this.fightScene.SetActive(fightScene);
+            await UIScene.Instance.EaseOut(easeDuration);
         }
     }
 }

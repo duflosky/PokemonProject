@@ -14,7 +14,7 @@ namespace UI
         [Header("Canvas")]
         [SerializeField] private UIScrollMenu uiScrollMenu;
         [SerializeField] private UIPokemonTeam uiPokemonTeam;
-        [SerializeField] private UIFight uiFight;
+        [SerializeField] public UIFight uiFight;
         [SerializeField] private UIBag uiBag;
 
         private UIMenu currentUiSelected;
@@ -53,10 +53,10 @@ namespace UI
         {
             CloseMenu(menuStack.Pop());
             if(menuStack.Count == 0 )return;
-            OpenMenu(menuStack.Peek());
+            OpenMenu(menuStack.Peek(), false);
         }
 
-        public void OpenMenu(Enums.UIMenus ui, bool pushMenu = false)
+        public void OpenMenu(Enums.UIMenus ui, bool pushMenu)
         {
             if(pushMenu)menuStack.Push(ui);
             if(currentUiSelected)currentUiSelected.gameObject.SetActive(false);
@@ -67,6 +67,8 @@ namespace UI
                 case Enums.UIMenus.PokemonTeamMenu: currentUiSelected = uiPokemonTeam;
                     break;
                 case Enums.UIMenus.BagMenu : currentUiSelected = uiBag;
+                    break;
+                case Enums.UIMenus.FightMenu : currentUiSelected = uiFight;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);

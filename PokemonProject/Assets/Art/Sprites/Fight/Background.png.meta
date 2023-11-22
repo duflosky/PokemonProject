@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c729e2b837b1d1645b47cf770b6fb165
+guid: 064ec6e9cd1319b419183c1e36766a78
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,282 +110,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_0
+      name: Background_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 162
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6339a417b118b1444be8ecc6c05e7d50
-      internalID: -1730009379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_1
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 192
-        width: 239
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 7, y: 7, z: 8, w: 7}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b522672105f49a4e8fcd5c7fa5a72e0
-      internalID: 769415352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 264
-        width: 100
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c9b62bf089e5d241b8858a3b2b735b7
-      internalID: 1039198358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_3
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 244
+        x: 6
+        y: 348
         width: 240
-        height: 48
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27687a88f4a34f34a97da535f4be61d5
-      internalID: 152408016
+      spriteID: d68a8e50d5ec7aa4ca19f3693fe43d59
+      internalID: 764753211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_4
+      name: Background_1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 215
-        width: 104
-        height: 37
+        x: 249
+        y: 348
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 872f9b33cd1fe8a4186a0c606bd34cb9
-      internalID: -1267679545
+      spriteID: 53beb7406e98f9142b8d7a4605a11731
+      internalID: 405734357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_5
+      name: Background_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 244
-        width: 120
-        height: 48
+        x: 492
+        y: 348
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d072f6d67f3078408702e7ed61406b7
-      internalID: -754928046
+      spriteID: f26366d687b45c74e8c03d4c02319846
+      internalID: -2125724099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_6
+      name: Background_3
       rect:
         serializedVersion: 2
-        x: 178
-        y: 218
-        width: 103
-        height: 12
+        x: 6
+        y: 233
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47372848e69b252438d7ebdd8cb083b2
-      internalID: 1635554245
+      spriteID: 26c714c80d2c3e64194b1d4cb13b83f6
+      internalID: 1555272844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu
-        (1)_7
+      name: Background_4
       rect:
         serializedVersion: 2
-        x: 178
-        y: 188
-        width: 104
-        height: 12
+        x: 249
+        y: 233
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d26341591718cfc429431df0a045acf2
-      internalID: -1710934968
+      spriteID: f54db692484193945b4a16d91f9465e4
+      internalID: -1067589193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combat Asset_0
+      name: Background_5
       rect:
         serializedVersion: 2
-        x: 193
-        y: 98
-        width: 48
-        height: 3
+        x: 492
+        y: 233
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2ad2ba34aa755c43980b1a78fd9406d
-      internalID: 2020784215
+      spriteID: ab98527f414625a44a1de78b25bbda80
+      internalID: 1050108752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combat Asset_1
+      name: Background_6
       rect:
         serializedVersion: 2
-        x: 193
-        y: 92
-        width: 48
-        height: 3
+        x: 6
+        y: 119
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6e9cd54c3db3a645a871fdbe2ccd7f7
-      internalID: -1120934640
+      spriteID: cb75de6f51bef9a448d5e6a90273d781
+      internalID: -1315383955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combat Asset_2
+      name: Background_7
       rect:
         serializedVersion: 2
-        x: 193
-        y: 87
-        width: 48
-        height: 3
+        x: 249
+        y: 119
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aa531728223af14a8a71f2a4faa8fc2
-      internalID: -451143174
+      spriteID: b6dd0498162e845448a6c36922df2676
+      internalID: -1380855000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combat Asset_3
+      name: Background_8
       rect:
         serializedVersion: 2
-        x: 269
-        y: 282
-        width: 6
-        height: 10
+        x: 492
+        y: 119
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1239c45b9a0d2b499e495458c89deef
-      internalID: 813511720
+      spriteID: 2125f2d11ff38da4a9d1cab38d4f8f0b
+      internalID: 1701514713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Combat Asset_4
+      name: Background_9
       rect:
         serializedVersion: 2
-        x: 450
-        y: 250
-        width: 1
-        height: 1
+        x: 6
+        y: 5
+        width: 240
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8303139da91123468497d0f1df32434
-      internalID: -457469612
+      spriteID: 0de2f9c8d64d1db4189a9b0a47ebf59b
+      internalID: 824215948
       vertices: []
       indices: 
       edges: []
@@ -393,7 +322,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e049189b5623e5243b917ba5c8bb66ac
+    spriteID: 6dfcce660df1a6841b56b7c988b310a1
     internalID: 0
     vertices: []
     indices: 
@@ -401,19 +330,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Combat Asset_0: 2020784215
-      Combat Asset_1: -1120934640
-      Combat Asset_2: -451143174
-      Combat Asset_3: 813511720
-      Combat Asset_4: -457469612
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_0: -1730009379
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_1: 769415352
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_2: 1039198358
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_3: 152408016
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_4: -1267679545
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_5: -754928046
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_6: 1635554245
-      Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_7: -1710934968
+      Background_0: 764753211
+      Background_1: 405734357
+      Background_10: 1213251555
+      Background_2: -2125724099
+      Background_3: 1555272844
+      Background_4: -1067589193
+      Background_5: 1050108752
+      Background_6: -1315383955
+      Background_7: -1380855000
+      Background_8: 1701514713
+      Background_9: 824215948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

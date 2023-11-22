@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18d6f0ad8d54df78a89b38ea1623a7c, type: 3}
-  m_Name: Charge
+  m_Script: {fileID: 11500000, guid: 80e00579bc064600b6960bf25438fbf3, type: 3}
+  m_Name: TypesRelations
   m_EditorClassIdentifier: 
-  name: Charge
-  attackType: 1
-  specialCapacity: 0
-  maxPP: 35
-  power: 30
-  precision: 1
+  relations:
+  - attackType: 11
+    relation: 1
+    defenseType: 10
+  - attackType: 10
+    relation: 1
+    defenseType: 12
+  - attackType: 12
+    relation: 1
+    defenseType: 11

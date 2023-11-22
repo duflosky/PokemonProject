@@ -81,6 +81,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4f761c5f4441ae80ffa16ce665f977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1784036879340638184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7781295610002144795}
+  - component: {fileID: 6904240737732475523}
+  m_Layer: 0
+  m_Name: FightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7781295610002144795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784036879340638184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 602650857745472053}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6904240737732475523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784036879340638184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bac426a9244b8bbae29f105b4a47c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpriteRenderer: {fileID: 0}
+  allySpriteRenderer: {fileID: 0}
+  enemyDebug: {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
+  typesRelations: {fileID: 11400000, guid: c0a4bc06a37d2a94f865b2e25f797262, type: 2}
+  enterFightEaseDuration: 0.2
 --- !u!1 &6315336078202928903
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cbd629f314430daea884f1dd0b3fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScene: {fileID: 0}
+  fightScene: {fileID: 0}
   debugStartPokemon:
   - {fileID: 11400000, guid: 6d1d33efefe2cf345822aeb6e32f2262, type: 2}
   - {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
@@ -167,5 +218,6 @@ Transform:
   m_Children:
   - {fileID: 1917812814598197388}
   - {fileID: 8016152574134244299}
+  - {fileID: 7781295610002144795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

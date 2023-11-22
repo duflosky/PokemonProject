@@ -20,7 +20,7 @@ namespace UI.Fight
         [SerializeField] private barState[] barStates;
 
         private int maxLife;
-        private int life;
+        public int life;
 
         private void Start()
         {
@@ -34,9 +34,9 @@ namespace UI.Fight
             UpdateBar();
         }
 
-        private void UpdateBar()
+        public void UpdateBar()
         {
-            float lifePercent = life/maxLife; 
+            float lifePercent = (float)life/maxLife; 
             _image.fillAmount = lifePercent;
 
             for (int i = 0; i < barStates.Length; i++)

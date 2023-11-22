@@ -8,8 +8,11 @@ namespace SO
         public string name;
         [TextArea] private string description;
         
-        public int maxPP;
-        public Enums.Types attackType;
+        public Enums.Types attackType = Enums.Types.Normal;
+        public bool specialCapacity; //Attack ou Attack spe
+        public int maxPP = 20;
+        public int power = 30;
+        public int precision = 100;
 
         public CapacityInstance GetInstance() => new CapacityInstance(this);
     }

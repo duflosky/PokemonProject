@@ -13,6 +13,9 @@ namespace SO
         
         public string name;
         [TextArea] public string description;
+        [Space] 
+        public Enums.Types type;
+        public Enums.Types secondType;
         [Header("Stats")] 
         public int baseMaxHp;
         public int baseAttack;
@@ -38,6 +41,7 @@ namespace SO
         public Sprite[] animationFrames;
 
         public PokemonInstance GetInstance() => new PokemonInstance(this);
+        public bool ContainType(Enums.Types _type) => _type == type || _type == secondType;
     }
 
     [Serializable]
@@ -89,7 +93,6 @@ namespace SO
             level = 1;
             SetupCapacity();
         }
-
         public PokemonInstance(PokemonSO _so, int _level) : this(_so)
         {
             for (int i = level; i < _level; i++)
@@ -111,6 +114,16 @@ namespace SO
             }
         }
 
+        public int GetCapacityAmount()
+        {
+            int count = 0;
+
+            foreach (var capacity in capacities)
+            {
+                if (capacity != null) count++;
+            }
+            return count;
+        }
         bool IsCapacityLearn(CapacitySO _capacity)
         {
             if (capacities == null) return false;
@@ -146,5 +159,6 @@ namespace SO
             defenseSpe += so.defenseSpeGain;
             speed += so.speedGain;
         }
+        
     }
 }

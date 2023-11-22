@@ -46,4 +46,12 @@ public class Enums
                 Dark,
                 Fairy
         }
+
+        public enum RelationType
+        {
+                Normal,
+                Strong,
+                Weak,
+                NoEffect
+        }
 }

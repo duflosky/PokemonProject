@@ -1,7 +1,10 @@
+using System;
+using Manager;
 using SO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UI.Fight
 {
@@ -9,9 +12,15 @@ namespace UI.Fight
     {
         private UIFight uiParent;
         [SerializeField] private TextMeshProUGUI text;
+        private Button button;
+        private Image image;
         private int index;
 
-        private CapacityInstance capacity;
+        private void Start()
+        {
+            button = GetComponent<Button>();
+            image = GetComponent<Image>();
+        }
 
         public void InitButton(UIFight parent, int _index)
         {
@@ -21,13 +30,26 @@ namespace UI.Fight
         
         public void SetCapacity(CapacityInstance _capacity)
         {
-            capacity = _capacity;
-            text.text = capacity.so.name;
+            text.text = _capacity.so.name;
+            button.enabled = image.enabled = true;
+        }
+        
+        public void SetEmpty()
+        {
+            text.text = "_";
+            button.enabled = image.enabled = false;
         }
         
         public void OnSelect(BaseEventData eventData)
         {
-            uiParent.SetCapacity(index);
+            uiParent.DisplayCapacity(index);
         }
+
+        public void ButtonAction()
+        {
+            FightManager.Instance.ProcessTurn(index);
+        }
+
+        
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Manager;
 using SO;
 using TMPro;
@@ -21,59 +22,62 @@ namespace UI.Fight
         [Space]
         [SerializeField] private GameObject fightPanel;
         [SerializeField] private GameObject actionPanel;
+        [SerializeField] private GameObject logPanel;
+        [Space]
+        [SerializeField] private UILogger logger;
         [Header("Event System Selection")] 
         [SerializeField] private Button actionPanelFirstSelect;
         [SerializeField] private Button fightPanelFirstSelect;
 
-        [Header("DEBUG")] 
-        [SerializeField]private PokemonSO allyPokemon;
-        [SerializeField]private PokemonSO enemyPokemon;
-         private PokemonInstance allyInstance;
-        private PokemonInstance enemyInstance;
+         //private PokemonInstance allyInstance;
 
         private Enums.UIPanel currentSelectedUI;
 
-        public override void InitMenu()
-        {
-            fightPanel.SetActive(false);
-            
-            EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
-            
-            allyInfoBox.InitBox(allyInstance);
-            SetPokemonCapacities(allyInstance);
-            enemyInfoBox.InitBox(enemyInstance);
-        }
-        
         void Start()
         {
-            allyInstance = new PokemonInstance(allyPokemon, 10);
-            allyInstance.currentExp = 150;
-            enemyInstance = new PokemonInstance(enemyPokemon, 13);
-            
             for (int i = 0; i < capacitiesButtons.Length; i++)
             {
                 capacitiesButtons[i].InitButton(this,i);
             }
-            //InitMenu();
+        }
+        
+        public override void InitMenu()
+        {
+            fightPanel.SetActive(false);
+            EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
+        }
+
+        public void DisplayPokemonInfo(PokemonInstance pokemon, bool ally)
+        {
+            if (ally)
+            {
+                allyInfoBox.InitBox(pokemon);
+                SetPokemonCapacities(pokemon);
+            }
+            else
+            {
+                enemyInfoBox.InitBox(pokemon);
+            }
         }
 
         void SetPokemonCapacities(PokemonInstance pokemon)
         {
             for (int i = 0; i < 4; i++)
             {
-                if(pokemon.capacities[i] == null)continue;
-                capacitiesButtons[i].SetCapacity(pokemon.capacities[i]);
+                if (pokemon.capacities[i] == null) capacitiesButtons[i].SetEmpty();
+                else capacitiesButtons[i].SetCapacity(pokemon.capacities[i]);
             }
         }
 
-        public void SetCapacity(int index)
+        public void DisplayCapacity(int index)
         {
-            var capacity = allyInstance.capacities[index];
+            var capacity = FightManager.Instance.currentAllyPokemon.capacities[index];
             currentPPText.text = $"{capacity.currentPP}";
             maxPPText.text = $"{capacity.maxPP}";
             attackTypeText.text = $"{capacity.so.attackType}".ToUpper();
         }
 
+        
         public void OpenFightPanel()
         {
             actionPanel.SetActive(false);
@@ -81,7 +85,6 @@ namespace UI.Fight
             currentSelectedUI = Enums.UIPanel.FightPanel;
             EventManager.Instance.SelectObject(fightPanelFirstSelect.gameObject);
         }
-
         public void CloseFightPanel()
         {
             fightPanel.SetActive(false);
@@ -102,6 +105,29 @@ namespace UI.Fight
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public async Task UpdateLife(bool allyAttack)
+        {
+            var box = allyAttack? enemyInfoBox : allyInfoBox;
+            await box.UpdateLife();
+        }
+
+        public async Task LogMessage(string message)
+        {
+           await logger.LogMessage(message);
+        }
+
+        public void StartTurn()
+        {
+            actionPanel.SetActive(false);
+            fightPanel.SetActive(false);
+        }
+        
+        public void EndTurn()
+        {
+            actionPanel.SetActive(true);
+            EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
         }
     }
 }
