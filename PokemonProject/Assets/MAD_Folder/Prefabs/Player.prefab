@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3172711435043208365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0.04, y: 0.6, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3918775663460765767}
@@ -339,7 +339,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 0.6, y: 0.6}
   m_Direction: 0
 --- !u!114 &4671265491280925283
 MonoBehaviour:
@@ -353,10 +353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1445ccac05504f84baf0a0f32f783c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   GroundTilemap: {fileID: 0}
   CollisionTilemap: {fileID: 0}
   GrassTilemap: {fileID: 0}
-  animatedTile: {fileID: 0}
+  grass: {fileID: 8520070026866028222, guid: f0e6ccdab0e837441b9e75013e0289a7, type: 3}
   _animator: {fileID: 5185576212312629846}
-  collider: {fileID: 0}
+  collider: {fileID: 4215253909632340572}
