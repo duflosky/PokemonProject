@@ -1,24 +1,28 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] 
-    [SerializeField] private float speed = 1;
+    [Header("Controls")] [SerializeField] private float speed = 1;
 
-    [Header("Tilemaps")] 
-    public Tilemap GroundTilemap;
-    public Tilemap[] CollisionTilemaps;
+    [Header("Tilemaps")] public Tilemap GroundTilemap;
+    public Tilemap CollisionTilemap;
+    public Tilemap GrassTilemap;
+    [SerializeField] private GameObject grass;
     [SerializeField] private Animator _animator;
+
+    [Header("Physics")] [SerializeField] private CapsuleCollider2D collider;
 
     private bool isWalking;
     private PlayerInputs playerInputs;
-    private Vector2 movement;
+    private Pool<GameObject> poolGrass;
 
     private void OnEnable()
     {
         playerInputs = new PlayerInputs();
+        poolGrass = new Pool<GameObject>(grass, 10);
         playerInputs.InGame.Enable();
     }
 
@@ -30,7 +34,12 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         if (isWalking) return;
-        movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
+        var movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
+        InitiateMovement(movement);
+    }
+
+    public void InitiateMovement(Vector2 movement)
+    {
         _animator.SetBool("Walking", movement != Vector2.zero);
         if (movement == Vector2.zero) return;
 
@@ -62,9 +71,9 @@ public class CharacterController : MonoBehaviour
                 animIndex = 2;
             }
         }
-        
+
         _animator.SetInteger("WalkSide", animIndex);
-        _animator.SetFloat("WalkBlend", animIndex/3f);
+        _animator.SetFloat("WalkBlend", animIndex / 3f);
 
         var targetPos = transform.position;
         targetPos += offset;
@@ -75,11 +84,18 @@ public class CharacterController : MonoBehaviour
     private IEnumerator Move(Vector3 targetPos)
     {
         Vector3Int gridPosition = GroundTilemap.WorldToCell(targetPos);
-        foreach (var collisionTilemap in CollisionTilemaps)
+        if (!GroundTilemap.HasTile(gridPosition) || CollisionTilemap.HasTile(gridPosition))
         {
-            if (!GroundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+            yield break;
+        }
+
+        if (GrassTilemap != null)
+        {
+            if (GrassTilemap.HasTile(gridPosition))
             {
-                yield break;
+                var grassGO = poolGrass.GetFromPool();
+                grassGO.transform.position = targetPos;
+                StartCoroutine(poolGrass.AddToPoolLater(grassGO, grassGO.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length));
             }
         }
 
@@ -91,6 +107,7 @@ public class CharacterController : MonoBehaviour
             yield return null;
         }
 
+        collider.enabled = true;
         transform.position = targetPos;
         isWalking = false;
     }
