@@ -7,17 +7,6 @@
       "dependencies": {},
       "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
     },
-    "com.mduflot.utilities": {
-      "version": "https://github.com/duflosky/Utilities.git?path=/Assets/Sources",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.cysharp.unitask": "2.5.0",
-        "com.unity.addressables": "1.21.19",
-        "com.unity.collections": "2.1.4"
-      },
-      "hash": "4cd8573ad46d75bdace579bd0f43e87a907377d5"
-    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
@@ -112,20 +101,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.addressables": {
-      "version": "1.21.19",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.21.21",
-        "com.unity.modules.assetbundle": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.8",
       "depth": 1,
@@ -143,13 +118,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
-      "version": "2.1.4",
-      "depth": 1,
+      "version": "1.2.4",
+      "depth": 2,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.8.4",
-        "com.unity.modules.unityanalytics": "1.0.0",
-        "com.unity.nuget.mono-cecil": "1.11.4"
+        "com.unity.burst": "1.6.6",
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },
@@ -216,13 +190,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.nuget.mono-cecil": {
-      "version": "1.11.4",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.render-pipelines.core": {
       "version": "14.0.8",
       "depth": 1,
@@ -244,13 +211,6 @@
         "com.unity.render-pipelines.core": "14.0.8",
         "com.unity.shadergraph": "14.0.8"
       }
-    },
-    "com.unity.scriptablebuildpipeline": {
-      "version": "1.21.21",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
     },
     "com.unity.searcher": {
       "version": "4.9.2",
