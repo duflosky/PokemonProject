@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Repli
   m_EditorClassIdentifier: 
   name: Repli
-  maxPP: 30
   attackType: 11
+  specialCapacity: 0
+  maxPP: 30
+  power: 300
+  precision: 100

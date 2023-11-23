@@ -390,6 +390,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Combat Asset_5
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 231
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112d6046c35312141b577410ee669439
+      internalID: -1700911678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -406,6 +427,7 @@ TextureImporter:
       Combat Asset_2: -451143174
       Combat Asset_3: 813511720
       Combat Asset_4: -457469612
+      Combat Asset_5: -1700911678
       Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_0: -1730009379
       Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_1: 769415352
       Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars & In-battle Menu (1)_2: 1039198358

@@ -28,6 +28,8 @@ namespace Manager
         
         [HideInInspector]public List<PokemonInstance> enemyPokemons;
 
+        private bool inFight;
+
         public PokemonInstance currentAllyPokemon { get; private set; }
         private PokemonInstance currentEnemyPokemon;
         private void Awake()
@@ -54,6 +56,7 @@ namespace Manager
         public void LaunchFight(PokemonInstance enemyPokemon) => LaunchFight(new List<PokemonInstance>() { enemyPokemon });
         public async void LaunchFight(List<PokemonInstance> enemyPokemonTeam)
         {
+            inFight = true;
             enemyPokemons = enemyPokemonTeam;
             await GameManager.Instance.GoToScene(enterFightEaseDuration);
             SetPokemon(GameManager.Instance.team[0], true);
@@ -101,6 +104,7 @@ namespace Manager
             if (currentEnemyPokemon.currentHp <= 0)
             {
                 await ProcessEnemyKO();
+                if(!inFight)return;
             }
             
             ui.EndTurn();
@@ -139,7 +143,7 @@ namespace Manager
 
         private void QuitFight()
         {
-            UIManager.Instance.ReturnMenu();
+            inFight = false;
             GameManager.Instance.GoToScene(enterFightEaseDuration, false);
         }
 
