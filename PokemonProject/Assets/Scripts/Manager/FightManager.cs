@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Objects;
 using SO;
 using UI;
 using UI.Fight;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Manager
@@ -14,8 +16,8 @@ namespace Manager
 
         private UIFight ui;
 
-        [SerializeField] private SpriteRenderer enemySpriteRenderer;
-        [SerializeField] private SpriteRenderer allySpriteRenderer;
+        [SerializeField] private PokemonSprite enemyPokemon;
+        [SerializeField] private PokemonSprite allyPokemon;
         [Space]
         [SerializeField]private PokemonSO enemyDebug;
         [Space,SerializeField] private int enemyLevel = 1;
@@ -66,12 +68,13 @@ namespace Manager
         {
             if (ally)
             {
-                allySpriteRenderer.sprite = pokemon.so.backPokemonSprite;
+                allyPokemon.spriteRenderer.sprite = pokemon.so.backPokemonSprite;
+                allyPokemon.StartJiggle();
                 currentAllyPokemon = pokemon;
             }
             else
             {
-                enemySpriteRenderer.sprite = pokemon.so.facePokemonSprite;
+                enemyPokemon.spriteRenderer.sprite = pokemon.so.facePokemonSprite;
                 currentEnemyPokemon = pokemon;
             }
             ui.DisplayPokemonInfo(pokemon,ally);
@@ -80,6 +83,7 @@ namespace Manager
 
         public async void ProcessTurn(int capacityUseIndex)
         {
+            allyPokemon.StopJiggle();
             ui.StartTurn();
             
             var allyCapacityUse = currentAllyPokemon.capacities[capacityUseIndex];
@@ -107,14 +111,16 @@ namespace Manager
             if(!inFight)return;
             
             ui.EndTurn();
+            allyPokemon.StartJiggle();
         }
 
         async Task ProcessAttack(CapacitySO capacity, PokemonInstance attacker, PokemonInstance defender, bool allyAttack)
         {
             var attackMessage = $"{attacker.so.name} utilise {capacity.name} !";
             await ui.LogMessage(attackMessage);
-            
-            //TODO animation d'attaque
+
+            if(attacker == currentAllyPokemon) await allyPokemon.Attack();
+            else await enemyPokemon.UseEffect();
 
             var damageDeal = CalculateDamage(capacity, attacker, defender);
             Debug.Log($"Deal {damageDeal} damage");
@@ -132,7 +138,7 @@ namespace Manager
             await ui.LogMessage(koMessage, true);
             await ui.LogMessage(endMessage);
             QuitFight();
-
+            currentAllyPokemon.currentHp = currentAllyPokemon.maxHp;
         }
 
         async Task ProcessEnemyKO()
@@ -150,8 +156,6 @@ namespace Manager
             await ui.LogMessage(levelUpMessage, true);
 
             QuitFight();
-
-            currentAllyPokemon.currentHp = currentAllyPokemon.maxHp;
         }
 
         private void QuitFight()

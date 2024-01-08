@@ -54,4 +54,14 @@ public class Enums
                 Weak,
                 NoEffect
         }
+
+        public enum StatType
+        {
+                Attack,
+                Defense,
+                AttackSpe,
+                DefenseSpe,
+                Speed,
+                Precision
+        }
 }

@@ -134,17 +134,20 @@ namespace UI.Fight
         public void StartFight()
         {
             actionPanel.SetActive(true);
+            allyInfoBox.StartJiggle();
         }
         
         public void StartTurn()
         {
             actionPanel.SetActive(false);
+            allyInfoBox.StopJiggle();
             fightPanel.SetActive(false);
         }
         
         public void EndTurn()
         {
             actionPanel.SetActive(true);
+            allyInfoBox.StartJiggle();
             EventManager.Instance.SelectObject(actionPanelFirstSelect.gameObject);
         }
     }

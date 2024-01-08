@@ -13,9 +13,15 @@ namespace UI.Fight
         [SerializeField] private TextMeshProUGUI hpText;
         [SerializeField] private Lifebar lifebar;
         [SerializeField] private ExperienceBar expBar;
-        [FormerlySerializedAs("lifetickDuration")]
+
+        [FormerlySerializedAs("lifetickDuration")] [Space] [SerializeField]
+        private float lifeTickDuration = 0.02f;
+
         [Space] 
-        [SerializeField] private float lifeTickDuration = 0.02f;
+        [SerializeField] private float jiggleForce;
+        [SerializeField] private float jiggleSpeed;
+
+        private bool jiggling;
 
         private PokemonInstance pokemon;
 
@@ -26,7 +32,7 @@ namespace UI.Fight
             levelText.text = $"{pokemon.level}";
             if (hpText) hpText.text = $"{pokemon.currentHp} / {pokemon.maxHp}";
             lifebar.InitBar(pokemon.currentHp, pokemon.maxHp);
-            if(expBar)expBar.InitBar(pokemon.currentExp, pokemon.totalExpNeed);
+            if (expBar) expBar.InitBar(pokemon.currentExp, pokemon.totalExpNeed);
         }
 
         public async Task UpdateLife()
@@ -39,13 +45,35 @@ namespace UI.Fight
                 {
                     startTime = Time.time;
                     lifebar.life += it;
-                    if(hpText)hpText.text = $"{lifebar.life} / {pokemon.maxHp}";
+                    if (hpText) hpText.text = $"{lifebar.life} / {pokemon.maxHp}";
                     lifebar.UpdateBar();
                 }
 
                 await Task.Yield();
             }
         }
+
+        public async void StartJiggle()
+        {
+            jiggling = true;
+            bool isUp = false;
+            float timer = Time.time;
+            while (jiggling)
+            {
+                if (Time.time >= timer + 10 / jiggleSpeed)
+                {
+                    transform.position += new Vector3(0, jiggleForce * (isUp ? -1 : 1), 0);
+                    isUp = !isUp;
+                    timer = Time.time;
+                }
+                await Task.Yield();
+            }
+            
+            if(isUp)transform.position -= new Vector3(0, jiggleForce, 0);
+        }
+
+        public void StopJiggle() => jiggling = false; 
+
 
         public async Task UpdateExperience(int exp)
         {

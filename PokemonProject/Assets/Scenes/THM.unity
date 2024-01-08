@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 94467539}
   - component: {fileID: 94467540}
+  - component: {fileID: 94467541}
+  - component: {fileID: 94467542}
   m_Layer: 0
   m_Name: AllyPokemon
   m_TagString: Untagged
@@ -149,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 94467538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.478217, y: -2.575, z: 0}
+  m_LocalPosition: {x: -4.478217, y: -2.6, z: 0}
   m_LocalScale: {x: 8, y: 7.9999995, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -958390324, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
+  m_Sprite: {fileID: -1271280759, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -207,6 +209,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &94467541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94467538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0.2
+  jiggleSpeed: 30
+--- !u!111 &94467542
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94467538}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0eca3c7e6b62f1f4b973ff4cbf49e690, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0eca3c7e6b62f1f4b973ff4cbf49e690, type: 2}
+  - {fileID: 7400000, guid: 644797b2b12ed444fa0a73ee0ab00b0a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &363375871
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +824,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1621011427}
   - component: {fileID: 1621011428}
+  - component: {fileID: 1621011429}
+  - component: {fileID: 1621011430}
   m_Layer: 0
   m_Name: EnemyPokemon
   m_TagString: Untagged
@@ -865,6 +900,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1621011429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621011426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0.2
+  jiggleSpeed: 5
+--- !u!111 &1621011430
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621011426}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  - {fileID: 7400000, guid: 95eebca96cbdd81488d517f6816a07d3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1853914127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9872,6 +9938,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4256845320501621731, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -137
+      objectReference: {fileID: 0}
     - target: {fileID: 4344786253727133962, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
       propertyPath: easeTime
@@ -9966,6 +10037,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773464342763438934, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: jiggleForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773464342763438934, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: jiggleSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4817010822437522224, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
@@ -10686,6 +10767,16 @@ PrefabInstance:
       propertyPath: enemyLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
+        type: 3}
+      propertyPath: allyPokemon
+      value: 
+      objectReference: {fileID: 94467541}
+    - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
+        type: 3}
+      propertyPath: enemyPokemon
+      value: 
+      objectReference: {fileID: 1621011429}
     - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
         type: 3}
       propertyPath: allySpriteRenderer

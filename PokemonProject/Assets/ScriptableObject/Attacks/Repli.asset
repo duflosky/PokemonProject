@@ -16,5 +16,5 @@ MonoBehaviour:
   attackType: 11
   specialCapacity: 0
   maxPP: 30
-  power: 300
+  power: 3000
   precision: 100

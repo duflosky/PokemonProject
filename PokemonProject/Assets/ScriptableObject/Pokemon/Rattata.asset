@@ -29,7 +29,7 @@ MonoBehaviour:
   defenseSpeGain: 2
   speedGain: 1
   learnCapacities:
-  - capacity: {fileID: 11400000, guid: 9d33a656c6adf1d4a9a0e347d7792194, type: 2}
+  - capacity: {fileID: 11400000, guid: a93fc6d06e40ae24db8a46e64f151047, type: 2}
     level: 1
   experienceCurve:
     serializedVersion: 2
