@@ -1,19 +1,21 @@
 using System.Collections;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Controls")] [SerializeField] private float speed = 1;
+    [Header("Controls")]
+    [SerializeField] private float speed = 1;
 
-    [Header("Tilemaps")] public Tilemap GroundTilemap;
+    [Header("Tilemaps")]
+    public Tilemap GroundTilemap;
     public Tilemap CollisionTilemap;
     public Tilemap GrassTilemap;
     [SerializeField] private GameObject grass;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator animator;
 
-    [Header("Physics")] [SerializeField] private CapsuleCollider2D collider;
+    [Header("Physics")]
+    [SerializeField] private CapsuleCollider2D collider;
 
     private bool isWalking;
     private PlayerInputs playerInputs;
@@ -40,7 +42,7 @@ public class CharacterController : MonoBehaviour
 
     public void InitiateMovement(Vector2 movement)
     {
-        _animator.SetBool("Walking", movement != Vector2.zero);
+        animator.SetBool("Walking", movement != Vector2.zero);
         if (movement == Vector2.zero) return;
 
         Vector3 offset;
@@ -72,8 +74,8 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        _animator.SetInteger("WalkSide", animIndex);
-        _animator.SetFloat("WalkBlend", animIndex / 3f);
+        animator.SetInteger("WalkSide", animIndex);
+        animator.SetFloat("WalkBlend", animIndex / 3f);
 
         var targetPos = transform.position;
         targetPos += offset;

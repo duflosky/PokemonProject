@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     [SerializeField] private Vector2 direction;
     [SerializeField] private Animator animator;
     [SerializeField] private bool isExit;
-    
+
     private CharacterController player;
     private CapsuleCollider2D collider;
 
@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
 
     private IEnumerator ChangeTilemap()
     {
-        if (animator != null & !isExit) animator.SetTrigger("Open");
+        if (animator != null && !isExit) animator.SetTrigger("Open");
         fader.FadeIn();
         collider.enabled = false;
         yield return new WaitForSeconds(0.5f);
@@ -40,7 +40,7 @@ public class Door : MonoBehaviour
         player.CollisionTilemap = tilemapCollision;
         player.InitiateMovement(direction);
         fader.FadeOut();
-        if (animator != null & isExit) animator.SetTrigger("Close");
+        if (animator != null && isExit) animator.SetTrigger("Close");
         yield return new WaitForSeconds(0.5f);
     }
 }

@@ -5000,6 +5000,11 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[2].second.m_TileColorIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 823631945846054631, guid: 250aa011120cac641a4afc5d880afab1,
+        type: 3}
+      propertyPath: m_Name
+      value: RedDoorCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 992963066239167617, guid: 250aa011120cac641a4afc5d880afab1,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.size
@@ -5065,6 +5070,11 @@ PrefabInstance:
       propertyPath: fader
       value: 
       objectReference: {fileID: 404394246}
+    - target: {fileID: 2542311072826826984, guid: 250aa011120cac641a4afc5d880afab1,
+        type: 3}
+      propertyPath: m_Name
+      value: GreenDoorCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 2882681802486896791, guid: 250aa011120cac641a4afc5d880afab1,
         type: 3}
       propertyPath: m_Name
@@ -5119,6 +5129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311625517259210070, guid: 250aa011120cac641a4afc5d880afab1,
+        type: 3}
+      propertyPath: m_Name
+      value: Stairs
       objectReference: {fileID: 0}
     - target: {fileID: 3422520456832318593, guid: 250aa011120cac641a4afc5d880afab1,
         type: 3}
@@ -6640,11 +6655,21 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[9].second.m_TileColorIndex
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7028181688815905530, guid: 250aa011120cac641a4afc5d880afab1,
+        type: 3}
+      propertyPath: m_Name
+      value: RedDoorCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 7524017949301851325, guid: 250aa011120cac641a4afc5d880afab1,
         type: 3}
       propertyPath: fader
       value: 
       objectReference: {fileID: 404394246}
+    - target: {fileID: 7825088519772283220, guid: 250aa011120cac641a4afc5d880afab1,
+        type: 3}
+      propertyPath: m_Name
+      value: GreenDoorCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 8216488110123648048, guid: 250aa011120cac641a4afc5d880afab1,
         type: 3}
       propertyPath: fader
