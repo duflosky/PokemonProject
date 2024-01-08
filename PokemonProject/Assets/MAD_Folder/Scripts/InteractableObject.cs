@@ -34,6 +34,7 @@ public class InteractableObject : MonoBehaviour
         player.onInteractionMovement -= DisplayInteractionMovement;
         Debug.Log("I can't move!");
         player.IsInteracting = true;
+        // TODO - fix lock in walking animation
         // TODO - Display dialogue
         Debug.Log($"Displaying dialogue: {dialogues[dialogueIndex]}");
         dialogueIndex++;

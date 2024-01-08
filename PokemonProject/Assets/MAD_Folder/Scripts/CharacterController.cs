@@ -4,6 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
 {
+    [Header("Graph")]
+    [SerializeField] private GameObject graph;
+    
     [Header("Controls")]
     [SerializeField] private float speed = 1;
 
@@ -16,6 +19,12 @@ public class CharacterController : MonoBehaviour
 
     [Header("Physics")]
     [SerializeField] private CapsuleCollider2D collider;
+    
+    [Header("Jump")]
+    [SerializeField] private AnimationCurve jumpCurve;
+    [SerializeField] private float jumpSpeed = 0.5f;
+    [SerializeField] private GameObject shadow;
+    [SerializeField] private GameObject dust;
 
     [HideInInspector] public bool IsInteracting;
     [HideInInspector] public bool IsWalking;
@@ -28,6 +37,8 @@ public class CharacterController : MonoBehaviour
     
     private PlayerInputs playerInputs;
     private Pool<GameObject> poolGrass;
+
+    private bool isJumping;
 
     private void OnEnable()
     {
@@ -95,6 +106,52 @@ public class CharacterController : MonoBehaviour
         StartCoroutine(Move(targetPos));
     }
 
+    public void InitiateJump(Vector2 direction)
+    {
+        animator.SetBool("Walking", direction != Vector2.zero);
+        if (direction == Vector2.zero) return;
+
+        Vector3 offset;
+        int animIndex;
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+            {
+                offset = Vector3.right * 2;
+                animIndex = 1;
+            }
+            else
+            {
+                offset = Vector3.left * 2;
+                animIndex = 3;
+            }
+        }
+        else
+        {
+            if (direction.y > 0)
+            {
+                offset = Vector3.up * 2;
+                animIndex = 0;
+            }
+            else
+            {
+                offset = Vector3.down * 2;
+                animIndex = 2;
+            }
+        }
+
+        animator.SetInteger("WalkSide", animIndex);
+        animator.SetFloat("WalkBlend", animIndex / 3f);
+
+        var targetPos = transform.position;
+        targetPos += offset;
+
+        shadow.SetActive(true);
+        isJumping = true;
+        StartCoroutine(Jump());
+        StartCoroutine(Move(targetPos));
+    }
+
     private IEnumerator Move(Vector3 targetPos)
     {
         Vector3Int gridPosition = GroundTilemap.WorldToCell(targetPos);
@@ -122,8 +179,36 @@ public class CharacterController : MonoBehaviour
             yield return null;
         }
 
+        if (isJumping)
+        {
+            dust.SetActive(true);
+            StartCoroutine(DeactivateDust());
+            isJumping = false;
+        }
+        shadow.SetActive(false);
         collider.enabled = true;
         transform.position = targetPos;
         IsWalking = false;
+    }
+
+    private IEnumerator Jump()
+    {
+        float expiredSeconds = 0.0f;
+        float progress = 0.0f;
+        Vector3 startPosition = graph.transform.localPosition;
+        while (progress < 1.0f)
+        {
+            expiredSeconds += Time.deltaTime;
+            progress = expiredSeconds / jumpSpeed;
+            graph.transform.localPosition = new Vector3(graph.transform.localPosition.x, startPosition.y + jumpCurve.Evaluate(progress) * 1.0f);   
+            yield return null;
+        }
+        graph.transform.localPosition = startPosition;
+    }
+
+    private IEnumerator DeactivateDust()
+    {
+        yield return new WaitForSeconds(dust.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        dust.SetActive(false);
     }
 }
