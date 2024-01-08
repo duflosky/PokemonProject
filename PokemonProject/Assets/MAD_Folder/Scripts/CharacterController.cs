@@ -17,7 +17,15 @@ public class CharacterController : MonoBehaviour
     [Header("Physics")]
     [SerializeField] private CapsuleCollider2D collider;
 
-    private bool isWalking;
+    [HideInInspector] public bool IsInteracting;
+    [HideInInspector] public bool IsWalking;
+    
+    /* DELEGATES */
+    public delegate void OnInteractionAction();
+    public OnInteractionAction onInteractionAction;
+    public delegate void OnInteractionMovement(Vector2 direction);
+    public OnInteractionMovement onInteractionMovement;
+    
     private PlayerInputs playerInputs;
     private Pool<GameObject> poolGrass;
 
@@ -26,18 +34,22 @@ public class CharacterController : MonoBehaviour
         playerInputs = new PlayerInputs();
         poolGrass = new Pool<GameObject>(grass, 10);
         playerInputs.InGame.Enable();
+        playerInputs.InGame.Action.performed += _ => onInteractionAction?.Invoke();
     }
 
     private void OnDisable()
     {
         playerInputs.InGame.Disable();
+        // TODO - event unsubscription via anonymous delegate
+        // playerInputs.InGame.Action.performed -= _ => onInteraction?.Invoke(Vector2.zero);
     }
 
     private void Update()
     {
-        if (isWalking) return;
+        if (IsWalking) return;
         var movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
-        InitiateMovement(movement);
+        onInteractionMovement?.Invoke(movement);
+        if (!IsInteracting) InitiateMovement(movement);
     }
 
     public void InitiateMovement(Vector2 movement)
@@ -97,11 +109,12 @@ public class CharacterController : MonoBehaviour
             {
                 var grassGO = poolGrass.GetFromPool();
                 grassGO.transform.position = targetPos;
-                StartCoroutine(poolGrass.AddToPoolLater(grassGO, grassGO.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length));
+                StartCoroutine(poolGrass.AddToPoolLater(grassGO,
+                    grassGO.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length));
             }
         }
 
-        isWalking = true;
+        IsWalking = true;
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -111,6 +124,6 @@ public class CharacterController : MonoBehaviour
 
         collider.enabled = true;
         transform.position = targetPos;
-        isWalking = false;
+        IsWalking = false;
     }
 }
