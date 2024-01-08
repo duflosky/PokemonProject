@@ -38,8 +38,6 @@ public class CharacterController : MonoBehaviour
     private PlayerInputs playerInputs;
     private Pool<GameObject> poolGrass;
 
-    private bool isJumping;
-
     private void OnEnable()
     {
         playerInputs = new PlayerInputs();
@@ -147,7 +145,6 @@ public class CharacterController : MonoBehaviour
         targetPos += offset;
 
         shadow.SetActive(true);
-        isJumping = true;
         StartCoroutine(Jump());
         StartCoroutine(Move(targetPos));
     }
@@ -178,14 +175,7 @@ public class CharacterController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             yield return null;
         }
-
-        if (isJumping)
-        {
-            dust.SetActive(true);
-            StartCoroutine(DeactivateDust());
-            isJumping = false;
-        }
-        shadow.SetActive(false);
+        
         collider.enabled = true;
         transform.position = targetPos;
         IsWalking = false;
@@ -204,6 +194,9 @@ public class CharacterController : MonoBehaviour
             yield return null;
         }
         graph.transform.localPosition = startPosition;
+        shadow.SetActive(false);
+        dust.SetActive(true);
+        StartCoroutine(DeactivateDust());
     }
 
     private IEnumerator DeactivateDust()
