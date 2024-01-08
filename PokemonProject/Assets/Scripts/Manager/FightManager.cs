@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SO;
 using UI;
 using UI.Fight;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -53,12 +51,13 @@ namespace Manager
             }
         }
 
-        public void LaunchFight(PokemonInstance enemyPokemon) => LaunchFight(new List<PokemonInstance>() { enemyPokemon });
+        public void LaunchFight(PokemonInstance enemyPokemon) => LaunchFight(new List<PokemonInstance> { enemyPokemon });
         public async void LaunchFight(List<PokemonInstance> enemyPokemonTeam)
         {
             inFight = true;
             enemyPokemons = enemyPokemonTeam;
             await GameManager.Instance.GoToScene(enterFightEaseDuration);
+            ui.StartFight();
             SetPokemon(GameManager.Instance.team[0], true);
             SetPokemon(enemyPokemons[0], false);
         }
@@ -92,20 +91,20 @@ namespace Manager
             var firstPokemon = allyFirst ? currentAllyPokemon : currentEnemyPokemon;
             var secondPokemon = !allyFirst ? currentAllyPokemon : currentEnemyPokemon;
             
-            await ProcessAttack(allyCapacityUse.so, firstPokemon, secondPokemon, allyFirst);
+            await ProcessAttack((allyFirst? allyCapacityUse : enemyCapacityUse).so, firstPokemon, secondPokemon, allyFirst);
            
-            if(secondPokemon.currentHp>0)await ProcessAttack(allyCapacityUse.so, secondPokemon, firstPokemon, !allyFirst);
+            if(secondPokemon.currentHp>0)await ProcessAttack((allyFirst?enemyCapacityUse :allyCapacityUse).so, secondPokemon, firstPokemon, !allyFirst);
 
             if (currentAllyPokemon.currentHp <= 0)
             {
-                //Choose New Pokemon
+                await ProcessAllyKO();
             }
 
             if (currentEnemyPokemon.currentHp <= 0)
             {
                 await ProcessEnemyKO();
-                if(!inFight)return;
             }
+            if(!inFight)return;
             
             ui.EndTurn();
         }
@@ -125,6 +124,16 @@ namespace Manager
             await ui.UpdateLife(allyAttack);
 
         }
+        
+        async Task ProcessAllyKO()
+        {
+            var koMessage = $"{currentAllyPokemon.Name} est KO !";
+            var endMessage = "Vous fuyez le combat . . .";
+            await ui.LogMessage(koMessage, true);
+            await ui.LogMessage(endMessage);
+            QuitFight();
+
+        }
 
         async Task ProcessEnemyKO()
         {
@@ -137,8 +146,12 @@ namespace Manager
             currentAllyPokemon.currentExp += expGain;
             await ui.UpdateExperience(currentAllyPokemon.currentExp);
             if (currentAllyPokemon.currentExp >= currentAllyPokemon.totalExpNeed) currentAllyPokemon.LevelUp();
+            var levelUpMessage = $"{currentAllyPokemon.Name} monte au N. {currentAllyPokemon.level} !";
+            await ui.LogMessage(levelUpMessage, true);
 
             QuitFight();
+
+            currentAllyPokemon.currentHp = currentAllyPokemon.maxHp;
         }
 
         private void QuitFight()
@@ -210,7 +223,7 @@ namespace Manager
         
         private int CalculateGainExp(PokemonInstance pokemon)
         {
-            return 15 * pokemon.level;
+            return 150 * pokemon.level;
         }
     }
 }

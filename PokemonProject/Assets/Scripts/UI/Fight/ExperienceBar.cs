@@ -40,6 +40,8 @@ namespace UI.Fight
                 _image.fillAmount = progression;
                 await Task.Yield();
             }
+
+            _image.fillAmount = (float)exp / maxExp;
         }
     }
 }

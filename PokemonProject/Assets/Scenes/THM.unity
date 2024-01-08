@@ -9542,6 +9542,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1338080005834447110, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.658
+      objectReference: {fileID: 0}
     - target: {fileID: 1375996683893391966, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9606,6 +9611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731081918769658704, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: tickSize
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1782353796225380456, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
@@ -10674,7 +10684,7 @@ PrefabInstance:
     - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
         type: 3}
       propertyPath: enemyLevel
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
         type: 3}

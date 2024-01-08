@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
-using System.Timers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -10,8 +8,10 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI logText;
         [SerializeField] private float logDelay;
+        public bool isLogging { get; private set; }
         public async Task LogMessage(string message)
         {
+            isLogging = true;
             string currentMessage = "";
             float timer = 0;
             int it = 0;
@@ -27,6 +27,7 @@ namespace UI
                 }
                 await Task.Yield();
             }
+            isLogging = false;
         }
     }
 }

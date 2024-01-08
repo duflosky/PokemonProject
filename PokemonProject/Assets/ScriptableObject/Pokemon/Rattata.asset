@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: RATTATA
   description: Le rat, proche de l'homme
+  type: 0
+  secondType: 0
   baseMaxHp: 5
   baseAttack: 3
   baseDefense: 2
@@ -25,7 +27,7 @@ MonoBehaviour:
   defenseGain: 1
   attackSpeGain: 2
   defenseSpeGain: 2
-  speedGain: 2
+  speedGain: 1
   learnCapacities:
   - capacity: {fileID: 11400000, guid: 9d33a656c6adf1d4a9a0e347d7792194, type: 2}
     level: 1

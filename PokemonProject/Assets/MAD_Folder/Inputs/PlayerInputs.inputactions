@@ -72,6 +72,74 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Interactions",
+            "id": "77cfed17-581d-45df-8df8-9f70095e77c3",
+            "actions": [
+                {
+                    "name": "A",
+                    "type": "Button",
+                    "id": "45e1af64-42f4-4878-9343-3caa61d09459",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "B",
+                    "type": "Button",
+                    "id": "fb2f61ab-905b-4752-a549-58ed9f6f3f06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Any",
+                    "type": "Button",
+                    "id": "07f7a3f7-5b35-48b7-bd37-76c8fa4e08c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ba87d851-c32b-4819-9c49-6d74586beb41",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "009927ce-f137-4bff-bd6b-5b0b85d37b0b",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15fb9460-c90d-4e48-84b7-cc79a1294206",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Any",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

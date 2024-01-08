@@ -131,6 +131,11 @@ namespace UI.Fight
            logScroller.gameObject.SetActive(false);
         }
 
+        public void StartFight()
+        {
+            actionPanel.SetActive(true);
+        }
+        
         public void StartTurn()
         {
             actionPanel.SetActive(false);

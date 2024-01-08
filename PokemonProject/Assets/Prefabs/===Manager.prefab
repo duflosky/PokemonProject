@@ -179,10 +179,6 @@ MonoBehaviour:
   fightScene: {fileID: 0}
   debugStartPokemon:
   - {fileID: 11400000, guid: 6d1d33efefe2cf345822aeb6e32f2262, type: 2}
-  - {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
-  - {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
-  - {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
-  - {fileID: 11400000, guid: 6d1d33efefe2cf345822aeb6e32f2262, type: 2}
   debugStartItem:
   - {fileID: 11400000, guid: c521140071ea1f84583ca9b566ceda66, type: 2}
   - {fileID: 11400000, guid: f88bebcb785b8d345b24c60c36fd1064, type: 2}
