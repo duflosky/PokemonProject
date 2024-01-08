@@ -51,13 +51,14 @@ namespace UI
 
         public void ReturnMenu()
         {
-            CloseMenu(menuStack.Pop());
+             CloseMenu(menuStack.Pop());
             if(menuStack.Count == 0 )return;
             OpenMenu(menuStack.Peek(), false);
         }
 
         public void OpenMenu(Enums.UIMenus ui, bool pushMenu)
         {
+            Debug.Log("Open " + ui);
             if(pushMenu)menuStack.Push(ui);
             if(currentUiSelected)currentUiSelected.gameObject.SetActive(false);
             switch (ui)
@@ -68,7 +69,7 @@ namespace UI
                     break;
                 case Enums.UIMenus.BagMenu : currentUiSelected = uiBag;
                     break;
-                case Enums.UIMenus.FightMenu : currentUiSelected = uiFight;
+                 case Enums.UIMenus.FightMenu : currentUiSelected = uiFight;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);

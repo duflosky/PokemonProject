@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: T_AtlasTexture_House_74
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1204392851, guid: 04f22abf35c5a404f88051baa3f65549, type: 3}
+  m_Sprite: {fileID: 628067890, guid: 5bf93b1c5be6c954fb4143e0c97ee28f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -128,6 +128,7 @@ MonoBehaviour:
   enemySpriteRenderer: {fileID: 0}
   allySpriteRenderer: {fileID: 0}
   enemyDebug: {fileID: 11400000, guid: d1b6d89bf1775e447ab4a65d8da98b3e, type: 2}
+  enemyLevel: 4
   typesRelations: {fileID: 11400000, guid: c0a4bc06a37d2a94f865b2e25f797262, type: 2}
   enterFightEaseDuration: 0.2
 --- !u!1 &6315336078202928903

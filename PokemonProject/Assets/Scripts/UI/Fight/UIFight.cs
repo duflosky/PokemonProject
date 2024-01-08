@@ -25,6 +25,7 @@ namespace UI.Fight
         [SerializeField] private GameObject logPanel;
         [Space]
         [SerializeField] private UILogger logger;
+        [SerializeField] private Image logScroller;
         [Header("Event System Selection")] 
         [SerializeField] private Button actionPanelFirstSelect;
         [SerializeField] private Button fightPanelFirstSelect;
@@ -122,11 +123,12 @@ namespace UI.Fight
         {
            await logger.LogMessage(message);
            if(!needInteract)return;
-           
+           logScroller.gameObject.SetActive(true);
            while (!Input.GetKeyDown(KeyCode.Space))
            {
                await Task.Yield();
            }
+           logScroller.gameObject.SetActive(false);
         }
 
         public void StartTurn()
