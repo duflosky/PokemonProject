@@ -8,29 +8,24 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private Vector2 direction;
     [SerializeField] private GameObject logPanel;
     [SerializeField] private UILogger uiLogger;
-    
-    private CharacterController player;
+    [SerializeField] private CharacterController player;
+
     private int dialogueIndex;
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = other.gameObject.GetComponent<CharacterController>();
-            player.onInteractionMovement += DisplayInteractionMovement;
-            player.onInteractionAction += DisplayInteractionAction;
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+        player.onInteractionMovement += DisplayInteractionMovement;
+        player.onInteractionAction += DisplayInteractionAction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player.onInteractionMovement -= DisplayInteractionMovement;
-            player.onInteractionAction -= DisplayInteractionAction;
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+        player.onInteractionMovement -= DisplayInteractionMovement;
+        player.onInteractionAction -= DisplayInteractionAction;
     }
-    
+
     private void DisplayInteractionMovement(Vector2 direction)
     {
         if (dialogueIndex >= dialogues.Count)
@@ -40,6 +35,7 @@ public class InteractableObject : MonoBehaviour
             player.IsInteracting = false;
             return;
         }
+
         if (direction != this.direction) return;
         player.onInteractionMovement -= DisplayInteractionMovement;
         logPanel.SetActive(true);
@@ -48,7 +44,7 @@ public class InteractableObject : MonoBehaviour
         uiLogger.LogMessage(dialogues[dialogueIndex]);
         dialogueIndex++;
     }
-    
+
     private void DisplayInteractionAction()
     {
         DisplayInteractionMovement(direction);
