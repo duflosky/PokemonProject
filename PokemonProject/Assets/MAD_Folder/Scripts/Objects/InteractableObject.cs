@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField] private List<string> dialogues;
     [SerializeField] private Vector2 direction;
+    [SerializeField] private GameObject logPanel;
+    [SerializeField] private UILogger uiLogger;
     
     private CharacterController player;
     private int dialogueIndex;
@@ -30,20 +33,20 @@ public class InteractableObject : MonoBehaviour
     
     private void DisplayInteractionMovement(Vector2 direction)
     {
-        if (direction != this.direction) return;
-        player.onInteractionMovement -= DisplayInteractionMovement;
-        Debug.Log("I can't move!");
-        player.IsInteracting = true;
-        // TODO - fix lock in walking animation
-        // TODO - Display dialogue
-        Debug.Log($"Displaying dialogue: {dialogues[dialogueIndex]}");
-        dialogueIndex++;
         if (dialogueIndex >= dialogues.Count)
         {
-            Debug.Log("I can move again!");
+            logPanel.SetActive(false);
             dialogueIndex = 0;
             player.IsInteracting = false;
+            return;
         }
+        if (direction != this.direction) return;
+        player.onInteractionMovement -= DisplayInteractionMovement;
+        logPanel.SetActive(true);
+        player.IsInteracting = true;
+        // TODO - fix lock in walking animation
+        uiLogger.LogMessage(dialogues[dialogueIndex]);
+        dialogueIndex++;
     }
     
     private void DisplayInteractionAction()
