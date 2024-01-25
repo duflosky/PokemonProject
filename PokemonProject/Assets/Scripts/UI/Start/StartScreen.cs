@@ -44,8 +44,7 @@ public class StartScreen : MonoBehaviour
 
     private void PassText(InputAction.CallbackContext obj)
     {
-        if (logger.isLogging) return;
-        
+        // if (logger.isLogging) return;
     }
 
     private void UnscrollPanel(InputAction.CallbackContext obj)=> scroller.GoPrevious();

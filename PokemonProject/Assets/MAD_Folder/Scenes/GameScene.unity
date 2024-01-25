@@ -383,7 +383,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  - {fileID: 7400000, guid: 0eca3c7e6b62f1f4b973ff4cbf49e690, type: 2}
   - {fileID: 7400000, guid: 644797b2b12ed444fa0a73ee0ab00b0a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
