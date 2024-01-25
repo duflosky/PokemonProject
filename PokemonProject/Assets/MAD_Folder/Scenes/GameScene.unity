@@ -730,6 +730,11 @@ PrefabInstance:
       propertyPath: fader
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4635821000153637248, guid: 66d03aceaa4e18a4c8e8f737dd608cbc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5430715301110615909, guid: 66d03aceaa4e18a4c8e8f737dd608cbc,
         type: 3}
       propertyPath: fader
