@@ -49,9 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b995c1df2043d6946a8420ad8c4bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiFight: {fileID: 1111081016473943501}
+  logPanel: {fileID: 4206837652261050743}
+  uiLogger: {fileID: 9020633015063331742}
+  fader: {fileID: 5689321396106136218}
   uiScrollMenu: {fileID: 4550558593613698306}
   uiPokemonTeam: {fileID: 8065686562809352472}
-  uiFight: {fileID: 1111081016473943501}
   uiBag: {fileID: 8405237790347124990}
 --- !u!1001 &3505491777560458795
 PrefabInstance:
@@ -177,6 +180,36 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3505491777560458795}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4206837652261050743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 776785984326545244, guid: 6901b73ad367fd84b804f762f0dda6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3505491777560458795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5689321396106136218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9102484686888025265, guid: 6901b73ad367fd84b804f762f0dda6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3505491777560458795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348c4684618920b41a0b664ad09d9c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9020633015063331742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5587203374694659509, guid: 6901b73ad367fd84b804f762f0dda6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3505491777560458795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df890d994f461d42a930e7d0cbdcffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3793057361819344517
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -25,6 +25,7 @@ namespace UI
                     it++;
                     logText.text = currentMessage;
                 }
+
                 await Task.Yield();
             }
             isLogging = false;
