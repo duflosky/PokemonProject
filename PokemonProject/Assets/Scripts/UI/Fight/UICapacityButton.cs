@@ -12,15 +12,9 @@ namespace UI.Fight
     {
         private UIFight uiParent;
         [SerializeField] private TextMeshProUGUI text;
-        private Button button;
-        private Image image;
+        [SerializeField] private Button button;
+        [SerializeField] private Image image;
         private int index;
-
-        private void Start()
-        {
-            button = GetComponent<Button>();
-            image = GetComponent<Image>();
-        }
 
         public void InitButton(UIFight parent, int _index)
         {

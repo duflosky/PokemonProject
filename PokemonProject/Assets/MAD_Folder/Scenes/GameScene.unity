@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &187437320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3578989791621791179, guid: 4ec93c5b25202e24883263fd4f8f2616,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069138383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &403875149
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +278,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6196963872248712840, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7170434363710691166, guid: d6fb9cc8bf711104cae5aaa50085710b,
         type: 3}
       propertyPath: m_SortingOrder
@@ -275,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FightScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107052195719500537, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -610,6 +632,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062530380ede90342875afc73f3e3a4a, type: 3}
+--- !u!114 &1138475400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7184158578597346472, guid: 4ec93c5b25202e24883263fd4f8f2616,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069138383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1158114014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2212466100891899112, guid: 4ec93c5b25202e24883263fd4f8f2616,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069138383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1557856809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8670034049859751607, guid: 4ec93c5b25202e24883263fd4f8f2616,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069138383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1578793464
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +730,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1867745679441819148, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 187437320}
     - target: {fileID: 2964188890300434293, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +825,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5066482411354375732, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1557856809}
+    - target: {fileID: 5281606599616722067, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1158114014}
+    - target: {fileID: 5702710014947418815, guid: 4ec93c5b25202e24883263fd4f8f2616,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1138475400}
     - target: {fileID: 5948596208680067971, guid: 4ec93c5b25202e24883263fd4f8f2616,
         type: 3}
       propertyPath: m_SizeDelta.x
