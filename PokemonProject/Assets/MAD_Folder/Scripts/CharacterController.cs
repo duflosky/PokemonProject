@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 public class CharacterController : MonoBehaviour
@@ -28,6 +29,7 @@ public class CharacterController : MonoBehaviour
 
     [HideInInspector] public bool IsInteracting;
     [HideInInspector] public bool IsWalking;
+    [HideInInspector] public bool IsInFight;
     
     /* DELEGATES */
     public delegate void OnInteractionAction();
@@ -55,7 +57,7 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (IsWalking) return;
+        if (IsWalking || IsInFight) return;
         var movement = playerInputs.InGame.Movement.ReadValue<Vector2>();
         onInteractionMovement?.Invoke(movement);
         if (!IsInteracting) InitiateMovement(movement);
