@@ -279,7 +279,23 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6792871842348536253, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 547219675}
+    - targetCorrespondingSourceObject: {fileID: 6792871842348536253, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 547219677}
+    - targetCorrespondingSourceObject: {fileID: 6975033186974292649, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 547219674}
+    - targetCorrespondingSourceObject: {fileID: 6975033186974292649, guid: d6fb9cc8bf711104cae5aaa50085710b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 547219676}
   m_SourcePrefab: {fileID: 100100000, guid: d6fb9cc8bf711104cae5aaa50085710b, type: 3}
 --- !u!1 &547219669 stripped
 GameObject:
@@ -299,6 +315,80 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 547219668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &547219672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6975033186974292649, guid: d6fb9cc8bf711104cae5aaa50085710b,
+    type: 3}
+  m_PrefabInstance: {fileID: 547219668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &547219673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6792871842348536253, guid: d6fb9cc8bf711104cae5aaa50085710b,
+    type: 3}
+  m_PrefabInstance: {fileID: 547219668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &547219674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547219672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0
+  jiggleSpeed: 0
+--- !u!114 &547219675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547219673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0
+  jiggleSpeed: 0
+--- !u!111 &547219676
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547219672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  - {fileID: 7400000, guid: 95eebca96cbdd81488d517f6816a07d3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!111 &547219677
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547219673}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  - {fileID: 7400000, guid: 644797b2b12ed444fa0a73ee0ab00b0a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &848829636
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +565,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
+        type: 3}
+      propertyPath: allyPokemon
+      value: 
+      objectReference: {fileID: 547219675}
+    - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
+        type: 3}
+      propertyPath: enemyPokemon
+      value: 
+      objectReference: {fileID: 547219674}
     - target: {fileID: 6904240737732475523, guid: 062530380ede90342875afc73f3e3a4a,
         type: 3}
       propertyPath: allySpriteRenderer

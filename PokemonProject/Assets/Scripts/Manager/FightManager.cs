@@ -43,16 +43,6 @@ namespace Manager
             ui = UIManager.Instance.uiFight;
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                var enemy = new PokemonInstance(enemyDebug, enemyLevel);
-                
-                LaunchFight(enemy);
-            }
-        }
-
         public void LaunchFight(PokemonInstance enemyPokemon) => LaunchFight(new List<PokemonInstance> { enemyPokemon });
         public async void LaunchFight(List<PokemonInstance> enemyPokemonTeam)
         {
