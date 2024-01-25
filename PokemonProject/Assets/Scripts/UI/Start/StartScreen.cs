@@ -1,6 +1,7 @@
 using UI;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class StartScreen : MonoBehaviour
         {
             _inputs.Interactions.A.performed -= ScrollPanel;
             _inputs.Interactions.B.performed -= UnscrollPanel;
+            SceneManager.LoadScene("GameScene");
             _inputs.Interactions.A.performed += PassText;
         }
     }

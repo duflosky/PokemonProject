@@ -30,7 +30,7 @@ public class ImageScroller : MonoBehaviour
     {
         if (index == images.Length -1)
         {
-            if(nextScroller == null)SceneManager.LoadScene("GameScene");
+            if(nextScroller == null)return null;
             nextScroller.StartSequence();
             images[index].SetActive(false);
             return nextScroller;
