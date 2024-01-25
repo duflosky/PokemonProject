@@ -21,23 +21,15 @@ public class NonPlayableCharacter : MonoBehaviour
         player = GameManager.Instance.player;
     }
 
-    private void Update()
-    {
-        if (type != NonPlayableCharacterType.Walker) return;
-        // TODO - NPC movement
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
-        Debug.Log("Enter");
         player.onInteractionAction += DisplayInteractionAction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
-        Debug.Log("Exit");
         player.onInteractionAction -= DisplayInteractionAction;
     }
 
