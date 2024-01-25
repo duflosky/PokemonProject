@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ImageScroller : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class ImageScroller : MonoBehaviour
     {
         if (index == images.Length -1)
         {
+            if(nextScroller == null)SceneManager.LoadScene("GameScene");
             nextScroller.StartSequence();
             images[index].SetActive(false);
             return nextScroller;
