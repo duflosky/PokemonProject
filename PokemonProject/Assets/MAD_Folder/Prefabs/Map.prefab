@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &1363675304980379059
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +228,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2060303061185877345
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +325,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2206250602397314408
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &2882681802486896791
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +548,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &3949803393783148242
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &4270975690928794021
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +737,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &4863455982130591677
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &5022142978745683925
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &5175571539384536819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &5590610725885140481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1189,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &5812215020978774569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1285,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6315546137528295814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &6437522301164959776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1474,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6906208562498754438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1570,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &7429123864553952925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1666,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &7446800602084038965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1 &7925900390378217797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1855,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1}
   logPanel: {fileID: 0}
   uiLogger: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &8910675760067356897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
+  player: {fileID: 0}
 --- !u!1001 &254637642276101265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2137,7 +2156,7 @@ PrefabInstance:
     - target: {fileID: 6213703630114212742, guid: 3d68420de7dbbaa4da05ca68b6a4a38b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2232,12 +2251,12 @@ PrefabInstance:
     - target: {fileID: 4737582691632920665, guid: 1bdf80943c20dce46b4de6ec16406ad4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5410684740653772877, guid: 1bdf80943c20dce46b4de6ec16406ad4,
         type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5410684740653772877, guid: 1bdf80943c20dce46b4de6ec16406ad4,
         type: 3}

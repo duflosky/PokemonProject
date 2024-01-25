@@ -13,18 +13,13 @@ public class Door : MonoBehaviour
     [SerializeField] private Vector2 direction;
     [SerializeField] private Animator animator;
     [SerializeField] private bool isExit;
-
-    private CharacterController player;
-    private CapsuleCollider2D collider;
+    [SerializeField] private CharacterController player;
+    [SerializeField] private CapsuleCollider2D collider;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = other.gameObject.GetComponent<CharacterController>();
-            collider = other.gameObject.GetComponent<CapsuleCollider2D>();
-            StartCoroutine(ChangeTilemap());
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+        StartCoroutine(ChangeTilemap());
     }
 
     private IEnumerator ChangeTilemap()
