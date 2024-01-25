@@ -42,10 +42,10 @@ namespace Manager
                 inventory[item.type].Add(new ItemStack(item, Random.Range(1, 15)));
             }
 
-            for (int i = 0; i < debugStartPokemon.Length; i++)
-            {
-                team[i] = new PokemonInstance(debugStartPokemon[i], 5);
-            }
+            // for (int i = 0; i < debugStartPokemon.Length; i++)
+            // {
+            //     team[i] = new PokemonInstance(debugStartPokemon[i], 5);
+            // }
         }
 
 

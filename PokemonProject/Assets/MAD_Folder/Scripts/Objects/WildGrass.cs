@@ -29,6 +29,7 @@ public class WildGrass : MonoBehaviour
 
     private void LaunchFightMovement(Vector2 direction)
     {
+        if (GameManager.Instance.team[0] == null) return;
         var random = Random.Range(0, 100);
         if (random > 25) return;
         player.onInteractionMovement -= LaunchFightMovement;
