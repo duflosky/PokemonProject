@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 405734357, guid: 064ec6e9cd1319b419183c1e36766a78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3068942384803387004}
   - component: {fileID: 4462351985296799365}
+  - component: {fileID: 7981864669392987025}
+  - component: {fileID: 3194575744023456316}
   m_Layer: 0
   m_Name: AllyPokemon
   m_TagString: Untagged
@@ -168,6 +170,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7981864669392987025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792871842348536253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0
+  jiggleSpeed: 0
+--- !u!111 &3194575744023456316
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792871842348536253}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 0eca3c7e6b62f1f4b973ff4cbf49e690, type: 2}
+  - {fileID: 7400000, guid: 644797b2b12ed444fa0a73ee0ab00b0a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6975033186974292649
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4051274309977454297}
   - component: {fileID: 3984623830148600465}
+  - component: {fileID: 7684337270075118246}
+  - component: {fileID: 2486135884905201676}
   m_Layer: 0
   m_Name: EnemyPokemon
   m_TagString: Untagged
@@ -240,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 436651644, guid: fb108ed57ec980a4284a0bfcfed4e993, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -252,6 +287,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7684337270075118246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975033186974292649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27034b4e5a445e7b8c7c8eb43ba5e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggleForce: 0
+  jiggleSpeed: 0
+--- !u!111 &2486135884905201676
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975033186974292649}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 95eebca96cbdd81488d517f6816a07d3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: cd0109dc47b07654a9ee5cde99da5c40, type: 2}
+  - {fileID: 7400000, guid: 95eebca96cbdd81488d517f6816a07d3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7517562239656303576
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +410,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7517562239656303576}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5910658526033550934
 MonoBehaviour:
   m_ObjectHideFlags: 0
