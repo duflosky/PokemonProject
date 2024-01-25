@@ -57,6 +57,7 @@ namespace Manager
         public async void LaunchFight(List<PokemonInstance> enemyPokemonTeam)
         {
             inFight = true;
+            GameManager.Instance.player.IsInFight = true;
             enemyPokemons = enemyPokemonTeam;
             await GameManager.Instance.GoToScene(enterFightEaseDuration);
             SetPokemon(GameManager.Instance.team[0], true);
@@ -144,6 +145,7 @@ namespace Manager
         private void QuitFight()
         {
             inFight = false;
+            GameManager.Instance.player.IsInFight = false;
             GameManager.Instance.GoToScene(enterFightEaseDuration, false);
         }
 

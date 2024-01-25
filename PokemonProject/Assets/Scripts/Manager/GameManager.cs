@@ -52,7 +52,7 @@ namespace Manager
         public async Task GoToScene(float easeDuration, bool fightScene = true)
         {
             await UIScene.Instance.EaseIn(easeDuration);
-            gameScene.SetActive(!fightScene);
+            // gameScene.SetActive(!fightScene);
             if (fightScene) UIManager.Instance.OpenMenu(Enums.UIMenus.FightMenu, true);
             else UIManager.Instance.ReturnMenu();
             this.fightScene.SetActive(fightScene);
