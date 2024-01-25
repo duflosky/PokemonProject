@@ -10,11 +10,14 @@ namespace UI
     public class UIManager : MonoBehaviour
     {
         public static UIManager Instance;
-        
+
         [Header("Canvas")]
+        public UIFight uiFight;
+        public GameObject logPanel;
+        public UILogger uiLogger;
+        public Fader fader;
         [SerializeField] private UIScrollMenu uiScrollMenu;
         [SerializeField] private UIPokemonTeam uiPokemonTeam;
-        [SerializeField] public UIFight uiFight;
         [SerializeField] private UIBag uiBag;
 
         private UIMenu currentUiSelected;
@@ -33,52 +36,57 @@ namespace UI
             uiFight.gameObject.SetActive(false);
             uiPokemonTeam.gameObject.SetActive(false);
             uiBag.gameObject.SetActive(false);
+            logPanel.SetActive(false);
         }
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Escape))GoBackMenu();
+            if (Input.GetKeyDown(KeyCode.Escape)) GoBackMenu();
         }
 
         void GoBackMenu()
         {
-            if(menuStack.Count == 0)
+            if (menuStack.Count == 0)
             {
-                OpenMenu(Enums.UIMenus.ScrollMenu,true);
+                OpenMenu(Enums.UIMenus.ScrollMenu, true);
             }
             else currentUiSelected.GoBackMenu();
         }
 
         public void ReturnMenu()
         {
-             CloseMenu(menuStack.Pop());
-            if(menuStack.Count == 0 )return;
+            CloseMenu(menuStack.Pop());
+            if (menuStack.Count == 0) return;
             OpenMenu(menuStack.Peek(), false);
         }
 
         public void OpenMenu(Enums.UIMenus ui, bool pushMenu)
         {
             Debug.Log("Open " + ui);
-            if(pushMenu)menuStack.Push(ui);
-            if(currentUiSelected)currentUiSelected.gameObject.SetActive(false);
+            if (pushMenu) menuStack.Push(ui);
+            if (currentUiSelected) currentUiSelected.gameObject.SetActive(false);
             switch (ui)
             {
-                case Enums.UIMenus.ScrollMenu: currentUiSelected = uiScrollMenu;
+                case Enums.UIMenus.ScrollMenu:
+                    currentUiSelected = uiScrollMenu;
                     break;
-                case Enums.UIMenus.PokemonTeamMenu: currentUiSelected = uiPokemonTeam;
+                case Enums.UIMenus.PokemonTeamMenu:
+                    currentUiSelected = uiPokemonTeam;
                     break;
-                case Enums.UIMenus.BagMenu : currentUiSelected = uiBag;
+                case Enums.UIMenus.BagMenu:
+                    currentUiSelected = uiBag;
                     break;
-                 case Enums.UIMenus.FightMenu : currentUiSelected = uiFight;
+                case Enums.UIMenus.FightMenu:
+                    currentUiSelected = uiFight;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);
             }
-            
+
             currentUiSelected.gameObject.SetActive(true);
             currentUiSelected.InitMenu();
         }
-        
+
         private void CloseMenu(Enums.UIMenus ui)
         {
             switch (ui)
@@ -98,8 +106,6 @@ namespace UI
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ui), ui, null);
             }
-            
         }
-
     }
 }

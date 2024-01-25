@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using Manager;
+using UI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,23 +10,26 @@ public class Door : MonoBehaviour
     [SerializeField] private Tilemap tilemapCollision;
     [SerializeField] private GameObject tilemapToActivate;
     [SerializeField] private GameObject tilemapToDeactivate;
-    [SerializeField] private Fader fader;
     [SerializeField] private Vector3 position;
     [SerializeField] private Vector2 direction;
     [SerializeField] private Animator animator;
     [SerializeField] private bool isExit;
 
+    private Fader fader;
     private CharacterController player;
     private CapsuleCollider2D collider;
 
+    private void Start()
+    {
+        fader = UIManager.Instance.fader;
+        player = GameManager.Instance.player;
+        collider = player.GetComponent<CapsuleCollider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = other.gameObject.GetComponent<CharacterController>();
-            collider = other.gameObject.GetComponent<CapsuleCollider2D>();
-            StartCoroutine(ChangeTilemap());
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+        StartCoroutine(ChangeTilemap());
     }
 
     private IEnumerator ChangeTilemap()
