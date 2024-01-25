@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Manager;
 using UI;
 using UnityEngine;
 
@@ -6,11 +7,19 @@ public class NonPlayableCharacter : MonoBehaviour
 {
     [SerializeField] private NonPlayableCharacterType type;
     [SerializeField] private List<string> dialogues;
-    [SerializeField] private GameObject logPanel;
-    [SerializeField] private UILogger uiLogger;
-    [SerializeField] private CharacterController player;
+
+    private GameObject logPanel;
+    private UILogger uiLogger;
+    private CharacterController player;
 
     private int dialogueIndex;
+
+    private void Start()
+    {
+        logPanel = UIManager.Instance.logPanel;
+        uiLogger = UIManager.Instance.uiLogger;
+        player = GameManager.Instance.player;
+    }
 
     private void Update()
     {
@@ -21,12 +30,14 @@ public class NonPlayableCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
+        Debug.Log("Enter");
         player.onInteractionAction += DisplayInteractionAction;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
+        Debug.Log("Exit");
         player.onInteractionAction -= DisplayInteractionAction;
     }
 
